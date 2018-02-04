@@ -25,6 +25,8 @@ public class FrontEnd extends JFrame {
 	JLabel B1;
 	JLabel B2;
 	JLabel B3;
+	JLabel blueScore;
+	JLabel redScore;
 	JCheckBox A1;
 	JCheckBox A2;
 	JCheckBox A3;
@@ -84,7 +86,44 @@ public class FrontEnd extends JFrame {
 		B1 = new JLabel("B1");
 		B2 = new JLabel("B2");
 		B3 = new JLabel("B3");
-		
+		redScore = new JLabel("RED SCORE:");
+		blueScore = new JLabel("BLUE SCORE:");
+		A1 = new JCheckBox(" ");
+		A2 = new JCheckBox(" ");
+		A3 = new JCheckBox(" ");
+		A4 = new JCheckBox(" ");
+		A5 = new JCheckBox(" ");
+		A6 = new JCheckBox(" ");
+		C1 = new JCheckBox(" ");
+		C2 = new JCheckBox(" ");
+		C3 = new JCheckBox(" ");
+		C4 = new JCheckBox(" ");
+		C5 = new JCheckBox(" ");
+		C6 = new JCheckBox(" ");
+		D1 = new JCheckBox(" ");
+		D2 = new JCheckBox(" ");
+		D3 = new JCheckBox(" ");
+		D4 = new JCheckBox(" ");
+		D5 = new JCheckBox(" ");
+		D6 = new JCheckBox(" ");
+		E1 = new JCheckBox(" ");
+		E2 = new JCheckBox(" ");
+		E3 = new JCheckBox(" ");
+		E4 = new JCheckBox(" ");
+		E5 = new JCheckBox(" ");
+		E6 = new JCheckBox(" ");
+		F1 = new JCheckBox(" ");
+		F2 = new JCheckBox(" ");
+		F3 = new JCheckBox(" ");
+		F4 = new JCheckBox(" ");
+		F5 = new JCheckBox(" ");
+		F6 = new JCheckBox(" ");
+		G1 = new JCheckBox(" ");
+		G2 = new JCheckBox(" ");
+		G3 = new JCheckBox(" ");
+		G4 = new JCheckBox(" ");
+		G5 = new JCheckBox(" ");
+		G6 = new JCheckBox(" ");
 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		panel.setLayout(null);
@@ -96,25 +135,25 @@ public class FrontEnd extends JFrame {
 		allianceSwitch.setFont(new Font(fontName, Font.BOLD, 25));
 		allianceSwitch.setForeground(Color.green);
 		
-		opponentSwitch.setBounds(300, 50, 300, 100);
+		opponentSwitch.setBounds(380, 50, 300, 100);
 		opponentSwitch.setFont(new Font(fontName, Font.BOLD, 25));
 		opponentSwitch.setForeground(Color.magenta);
 		
-		scale.setBounds(550, 50, 300, 100);
+		scale.setBounds(700, 50, 300, 100);
 		scale.setFont(new Font(fontName, Font.BOLD, 25));
 		scale.setForeground(Color.gray);
 		
-		defense.setBounds(750, 50, 300, 100);
+		defense.setBounds(890, 50, 300, 100);
 		defense.setFont(new Font(fontName, Font.BOLD, 25));
-		defense.setForeground(Color.cyan);
+		defense.setForeground(Color.orange);
 		
-		climb.setBounds(100, 50, 300, 100);
+		vault.setBounds(1100, 50, 300, 100);
+		vault.setFont(new Font(fontName, Font.BOLD, 25));
+		vault.setForeground(Color.cyan);
+		
+		climb.setBounds(1250, 50, 300, 100);
 		climb.setFont(new Font(fontName, Font.BOLD, 25));
 		climb.setForeground(Color.yellow);
-		
-		vault.setBounds(1200, 50, 300, 100);
-		vault.setFont(new Font(fontName, Font.BOLD, 25));
-		vault.setForeground(Color.orange);
 		
 		mistake.setBounds(560, 0, 300, 100);
 		mistake.setFont(new Font(fontName, Font.BOLD, 50));
@@ -143,6 +182,18 @@ public class FrontEnd extends JFrame {
 		B3.setBounds(10, 475, 50, 50);
 		B3.setFont(new Font(fontName, Font.BOLD, 30));
 		B3.setForeground(Color.blue);
+		
+		blueScore.setBounds(125, 550, 300, 50);
+		blueScore.setFont(new Font(fontName, Font.BOLD, 30));
+		blueScore.setForeground(Color.blue);
+		
+		redScore.setBounds(1000, 550, 300, 50);
+		redScore.setFont(new Font(fontName, Font.BOLD, 30));
+		redScore.setForeground(Color.red);
+		
+		A1.setBounds(1000, 550, 300, 50);
+		A1.setFont(new Font(fontName, Font.BOLD, 30));
+		A1.setForeground(Color.red);
 
 		panel.add(start);
 		panel.add(allianceSwitch);
@@ -150,6 +201,7 @@ public class FrontEnd extends JFrame {
 		panel.add(scale);
 		panel.add(defense);
 		panel.add(climb);
+		panel.add(vault);
 		panel.add(mistake);
 		panel.add(R1);
 		panel.add(R2);
@@ -157,6 +209,44 @@ public class FrontEnd extends JFrame {
 		panel.add(B1);
 		panel.add(B2);
 		panel.add(B3);
+		panel.add(redScore);
+		panel.add(blueScore);
+		panel.add(A1);
+		panel.add(A2);
+		panel.add(A3);
+		panel.add(A4);
+		panel.add(A5);
+		panel.add(A6);
+		panel.add(C1);
+		panel.add(C2);
+		panel.add(C3);
+		panel.add(C4);
+		panel.add(C5);
+		panel.add(C6);
+		panel.add(D1);
+		panel.add(D2);
+		panel.add(D3);
+		panel.add(D4);
+		panel.add(D5);
+		panel.add(D6);
+		panel.add(E1);
+		panel.add(E2);
+		panel.add(E3);
+		panel.add(E4);
+		panel.add(E5);
+		panel.add(E6);
+		panel.add(F1);
+		panel.add(F2);
+		panel.add(F3);
+		panel.add(F4);
+		panel.add(F5);
+		panel.add(F6);
+		panel.add(G1);
+		panel.add(G2);
+		panel.add(G3);
+		panel.add(G4);
+		panel.add(G5);
+		panel.add(G6);
 		
 
 		
