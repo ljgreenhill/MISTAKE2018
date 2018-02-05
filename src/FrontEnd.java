@@ -8,6 +8,7 @@ import javax.swing.*;
 public class FrontEnd extends JFrame {
 	
 	static final int autoBufferTime = 5000;
+	
 
 	//ArrayList<JLabel> labelList;
 	JPanel panel;
@@ -67,7 +68,7 @@ public class FrontEnd extends JFrame {
 	
 	final String fontName = "comic sans ms"; 	
 
-	public FrontEnd() {
+	public FrontEnd(Robot RedRobot1, Robot RedRobot2, Robot RedRobot3, Robot BlueRobot1, Robot BlueRobot2, Robot BlueRobot3) {
 		
 
 		panel = new JPanel();
@@ -89,41 +90,41 @@ public class FrontEnd extends JFrame {
 		redScore = new JLabel("RED SCORE:");
 		blueScore = new JLabel("BLUE SCORE:");
 		A1 = new JCheckBox();
-		A2 = new JCheckBox(" ");
-		A3 = new JCheckBox(" ");
-		A4 = new JCheckBox(" ");
-		A5 = new JCheckBox(" ");
-		A6 = new JCheckBox(" ");
-		C1 = new JCheckBox(" ");
-		C2 = new JCheckBox(" ");
-		C3 = new JCheckBox(" ");
-		C4 = new JCheckBox(" ");
-		C5 = new JCheckBox(" ");
-		C6 = new JCheckBox(" ");
-		D1 = new JCheckBox(" ");
-		D2 = new JCheckBox(" ");
-		D3 = new JCheckBox(" ");
-		D4 = new JCheckBox(" ");
-		D5 = new JCheckBox(" ");
-		D6 = new JCheckBox(" ");
-		E1 = new JCheckBox(" ");
-		E2 = new JCheckBox(" ");
-		E3 = new JCheckBox(" ");
-		E4 = new JCheckBox(" ");
-		E5 = new JCheckBox(" ");
-		E6 = new JCheckBox(" ");
-		F1 = new JCheckBox(" ");
-		F2 = new JCheckBox(" ");
-		F3 = new JCheckBox(" ");
-		F4 = new JCheckBox(" ");
-		F5 = new JCheckBox(" ");
-		F6 = new JCheckBox(" ");
-		G1 = new JCheckBox(" ");
-		G2 = new JCheckBox(" ");
-		G3 = new JCheckBox(" ");
-		G4 = new JCheckBox(" ");
-		G5 = new JCheckBox(" ");
-		G6 = new JCheckBox(" ");
+		A2 = new JCheckBox();
+		A3 = new JCheckBox();
+		A4 = new JCheckBox();
+		A5 = new JCheckBox();
+		A6 = new JCheckBox();
+		C1 = new JCheckBox();
+		C2 = new JCheckBox();
+		C3 = new JCheckBox();
+		C4 = new JCheckBox();
+		C5 = new JCheckBox();
+		C6 = new JCheckBox();
+		D1 = new JCheckBox();
+		D2 = new JCheckBox();
+		D3 = new JCheckBox();
+		D4 = new JCheckBox();
+		D5 = new JCheckBox();
+		D6 = new JCheckBox();
+		E1 = new JCheckBox();
+		E2 = new JCheckBox();
+		E3 = new JCheckBox();
+		E4 = new JCheckBox();
+		E5 = new JCheckBox();
+		E6 = new JCheckBox();
+		F1 = new JCheckBox();
+		F2 = new JCheckBox();
+		F3 = new JCheckBox();
+		F4 = new JCheckBox();
+		F5 = new JCheckBox();
+		F6 = new JCheckBox();
+		G1 = new JCheckBox();
+		G2 = new JCheckBox();
+		G3 = new JCheckBox();
+		G4 = new JCheckBox();
+		G5 = new JCheckBox();
+		G6 = new JCheckBox();
 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		panel.setLayout(null);
@@ -194,146 +195,399 @@ public class FrontEnd extends JFrame {
 		A1.setBounds(175, 120, 50, 50);
 		A1.setFont(new Font(fontName, Font.BOLD, 30));
 		A1.setBackground(Color.red);
+		A1.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				RedRobot1.setMode("allianceSwitch");
+			}
+			
+		});
 		
 		A2.setBounds(175, 190, 50, 50);
 		A2.setFont(new Font(fontName, Font.BOLD, 30));
 		A2.setBackground(Color.red);
+		A2.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				RedRobot2.setMode("allianceSwitch");
+			}
+		});
 		
 		A3.setBounds(175, 260, 50, 50);
 		A3.setFont(new Font(fontName, Font.BOLD, 30));
 		A3.setBackground(Color.red);
+		A3.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				RedRobot3.setMode("allianceSwitch");
+			}
+		});
 		
 		A4.setBounds(175, 330, 50, 50);
 		A4.setFont(new Font(fontName, Font.BOLD, 30));
 		A4.setBackground(Color.blue);
+		A4.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				BlueRobot1.setMode("allianceSwitch");
+			}
+		});
 		
 		A5.setBounds(175, 400, 50, 50);
 		A5.setFont(new Font(fontName, Font.BOLD, 30));
 		A5.setBackground(Color.blue);
+		A5.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				BlueRobot2.setMode("allianceSwitch");
+			}
+		});
 		
 		A6.setBounds(175, 470, 50, 50);
 		A6.setFont(new Font(fontName, Font.BOLD, 30));
 		A6.setBackground(Color.blue);
+		A6.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				BlueRobot3.setMode("allianceSwitch");
+			}
+		});
 		
 		C1.setBounds(450, 120, 50, 50);
 		C1.setFont(new Font(fontName, Font.BOLD, 30));
 		C1.setBackground(Color.red);
+		C1.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				RedRobot1.setMode("opponentSwitch");
+			}
+		});
 		
 		C2.setBounds(450, 190, 50, 50);
 		C2.setFont(new Font(fontName, Font.BOLD, 30));
 		C2.setBackground(Color.red);
+		C2.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				RedRobot2.setMode("opponentSwitch");
+			}
+		});
 		
 		C3.setBounds(450, 260, 50, 50);
 		C3.setFont(new Font(fontName, Font.BOLD, 30));
 		C3.setBackground(Color.red);
+		C3.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				RedRobot3.setMode("opponentSwitch");
+			}
+		});
 		
 		C4.setBounds(450, 330, 50, 50);
 		C4.setFont(new Font(fontName, Font.BOLD, 30));
 		C4.setBackground(Color.blue);
+		C4.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				BlueRobot1.setMode("opponentSwitch");
+			}
+		});
 		
 		C5.setBounds(450, 400, 50, 50);
 		C5.setFont(new Font(fontName, Font.BOLD, 30));
 		C5.setBackground(Color.blue);
+		C5.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				BlueRobot2.setMode("opponentSwitch");
+			}
+		});
 		
 		C6.setBounds(450, 470, 50, 50);
 		C6.setFont(new Font(fontName, Font.BOLD, 30));
 		C6.setBackground(Color.blue);
+		C6.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				BlueRobot3.setMode("opponentSwitch");
+			}
+		});
 		
 		D1.setBounds(710, 120, 50, 50);
 		D1.setFont(new Font(fontName, Font.BOLD, 30));
 		D1.setBackground(Color.red);
+		D1.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				RedRobot1.setMode("scale");
+			}
+		});
 		
 		D2.setBounds(710, 190, 50, 50);
 		D2.setFont(new Font(fontName, Font.BOLD, 30));
 		D2.setBackground(Color.red);
+		D2.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				RedRobot2.setMode("scale");
+			}
+		});
 	
 		D3.setBounds(710, 260, 50, 50);
 		D3.setFont(new Font(fontName, Font.BOLD, 30));
 		D3.setBackground(Color.red);
+		D3.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				RedRobot3.setMode("scale");
+			}
+		});
 	
 		D4.setBounds(710, 330, 50, 50);
 		D4.setFont(new Font(fontName, Font.BOLD, 30));
 		D4.setBackground(Color.blue);
+		D4.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				BlueRobot1.setMode("scale");
+			}
+		});
 		
 		D5.setBounds(710, 400, 50, 50);
 		D5.setFont(new Font(fontName, Font.BOLD, 30));
 		D5.setBackground(Color.blue);
+		D5.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				BlueRobot3.setMode("scale");
+			}
+		});
 		
 		D6.setBounds(710, 470, 50, 50);
 		D6.setFont(new Font(fontName, Font.BOLD, 30));
 		D6.setBackground(Color.blue);
+		D6.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				BlueRobot3.setMode("scale");
+			}
+		});
 		
 		E1.setBounds(930, 120, 50, 50);
 		E1.setFont(new Font(fontName, Font.BOLD, 30));
 		E1.setBackground(Color.red);
+		E1.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				RedRobot1.setMode("defense");
+			}
+		});
 		
 		E2.setBounds(930, 190, 50, 50);
 		E2.setFont(new Font(fontName, Font.BOLD, 30));
 		E2.setBackground(Color.red);
+		E2.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				RedRobot2.setMode("defense");
+			}
+		});
 	
 		E3.setBounds(930, 260, 50, 50);
 		E3.setFont(new Font(fontName, Font.BOLD, 30));
 		E3.setBackground(Color.red);
+		E3.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				RedRobot3.setMode("defense");
+			}
+		});
 	
 		E4.setBounds(930, 330, 50, 50);
 		E4.setFont(new Font(fontName, Font.BOLD, 30));
 		E4.setBackground(Color.blue);
+		E4.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				BlueRobot1.setMode("defense");
+			}
+		});
 		
 		E5.setBounds(930, 400, 50, 50);
 		E5.setFont(new Font(fontName, Font.BOLD, 30));
 		E5.setBackground(Color.blue);
+		E5.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				BlueRobot2.setMode("defense");
+			}
+		});
 		
 		E6.setBounds(930, 470, 50, 50);
 		E6.setFont(new Font(fontName, Font.BOLD, 30));
 		E6.setBackground(Color.blue);
+		E6.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				BlueRobot3.setMode("defense");
+			}
+		});
 		
 		F1.setBounds(1120, 120, 50, 50);
 		F1.setFont(new Font(fontName, Font.BOLD, 30));
 		F1.setBackground(Color.red);
+		F1.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				RedRobot1.setMode("vault");
+			}
+		});
 		
 		F2.setBounds(1120, 190, 50, 50);
 		F2.setFont(new Font(fontName, Font.BOLD, 30));
 		F2.setBackground(Color.red);
+		F2.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				RedRobot2.setMode("vault");
+			}
+		});
 	
 		F3.setBounds(1120, 260, 50, 50);
 		F3.setFont(new Font(fontName, Font.BOLD, 30));
 		F3.setBackground(Color.red);
+		F3.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				RedRobot3.setMode("vault");
+			}
+		});
 	
 		F4.setBounds(1120, 330, 50, 50);
 		F4.setFont(new Font(fontName, Font.BOLD, 30));
 		F4.setBackground(Color.blue);
+		F4.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				BlueRobot1.setMode("vault");
+			}
+		});
 		
 		F5.setBounds(1120, 400, 50, 50);
 		F5.setFont(new Font(fontName, Font.BOLD, 30));
 		F5.setBackground(Color.blue);
+		F5.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				BlueRobot2.setMode("vault");
+			}
+		});
 		
 		F6.setBounds(1120, 470, 50, 50);
 		F6.setFont(new Font(fontName, Font.BOLD, 30));
 		F6.setBackground(Color.blue);
+		F6.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				BlueRobot3.setMode("vault");
+			}
+		});
 		
 		G1.setBounds(1260, 120, 50, 50);
 		G1.setFont(new Font(fontName, Font.BOLD, 30));
 		G1.setBackground(Color.red);
+		G1.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				RedRobot1.setClimb(true);
+			}
+		});
 	
 		G2.setBounds(1260, 190, 50, 50);
 		G2.setFont(new Font(fontName, Font.BOLD, 30));
 		G2.setBackground(Color.red);
+		G2.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				RedRobot2.setClimb(true);
+			}
+		});
 	
 		G3.setBounds(1260, 260, 50, 50);
 		G3.setFont(new Font(fontName, Font.BOLD, 30));
 		G3.setBackground(Color.red);
+		G3.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				RedRobot3.setClimb(true);
+			}
+		});
 	
 		G4.setBounds(1260, 330, 50, 50);
 		G4.setFont(new Font(fontName, Font.BOLD, 30));
 		G4.setBackground(Color.blue);
+		G4.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				BlueRobot1.setClimb(true);
+			}
+		});
 		
 		G5.setBounds(1260, 400, 50, 50);
 		G5.setFont(new Font(fontName, Font.BOLD, 30));
 		G5.setBackground(Color.blue);
+		G5.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				BlueRobot2.setClimb(true);
+			}
+		});
 		
 		G6.setBounds(1260, 470, 50, 50);
 		G6.setFont(new Font(fontName, Font.BOLD, 30));
 		G6.setBackground(Color.blue);
+		G6.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				BlueRobot3.setClimb(true);
+			}
+		});
 		
 		panel.add(start);
 		panel.add(allianceSwitch);

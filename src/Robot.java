@@ -9,6 +9,27 @@ public class Robot {
 	double scaleTimeNeutral;
 	double climbTime;
 	double vaultTime;
+	String mode;
+	boolean climb = false;
+	
+	public Robot () {}
+	
+
+	public String getMode() {
+		return mode;
+	}
+	
+	public void setMode(String mode) {
+		this.mode = mode;
+	}
+	
+	public boolean getClimb() {
+		return climb;
+	}
+	
+	public void setClimb(boolean climb) {
+		this.climb = climb;
+	}
 	
 	//get and set time to deliver to own switch when defended
 	public double getSwitchAllianceTimeDefense() {
@@ -72,5 +93,14 @@ public class Robot {
 	public void setVaultTime(double vaultTime) {
 		this.vaultTime = vaultTime;
 	}
+	
+/*	//get and set robot mode
+	public String getMode() {
+		return mode;
+	}
+	
+	public void setMode(String mode) {
+		this.mode = mode;
+	}*/
 
 }
