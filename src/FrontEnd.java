@@ -134,31 +134,31 @@ public class FrontEnd extends JFrame {
 		
 		allianceSwitch.setBounds(100, 50, 300, 100);
 		allianceSwitch.setFont(new Font(fontName, Font.BOLD, 25));
-		allianceSwitch.setForeground(Color.green);
+		allianceSwitch.setForeground(Color.black);
 		
 		opponentSwitch.setBounds(380, 50, 300, 100);
 		opponentSwitch.setFont(new Font(fontName, Font.BOLD, 25));
-		opponentSwitch.setForeground(Color.magenta);
+		opponentSwitch.setForeground(Color.black);
 		
 		scale.setBounds(700, 50, 300, 100);
 		scale.setFont(new Font(fontName, Font.BOLD, 25));
-		scale.setForeground(Color.gray);
+		scale.setForeground(Color.black);
 		
 		defense.setBounds(890, 50, 300, 100);
 		defense.setFont(new Font(fontName, Font.BOLD, 25));
-		defense.setForeground(Color.orange);
+		defense.setForeground(Color.black);
 		
 		vault.setBounds(1100, 50, 300, 100);
 		vault.setFont(new Font(fontName, Font.BOLD, 25));
-		vault.setForeground(Color.cyan);
+		vault.setForeground(Color.black);
 		
 		climb.setBounds(1250, 50, 300, 100);
 		climb.setFont(new Font(fontName, Font.BOLD, 25));
-		climb.setForeground(Color.yellow);
+		climb.setForeground(Color.black);
 		
 		mistake.setBounds(560, 0, 300, 100);
 		mistake.setFont(new Font(fontName, Font.BOLD, 50));
-		mistake.setForeground(Color.black);
+		mistake.setForeground(Color.red);
 		
 		R1.setBounds(10, 120, 50, 50);
 		R1.setFont(new Font(fontName, Font.BOLD, 30));
