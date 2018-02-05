@@ -2,31 +2,42 @@
 public class Robot {
 	
 
-	double switchTimeDefense;
-	double switchTimeNeutral;
+	double switchAllianceTimeDefense;
+	double switchAllianceTimeNeutral;
+	double switchOpponentTime;
 	double scaleTimeDefense;
 	double scaleTimeNeutral;
 	double climbTime;
-	double exchangeTime;
 	double vaultTime;
 	
-	public double getSwitchTimeDefense() {
-		return switchTimeDefense;
+	//get and set time to deliver to own switch when defended
+	public double getSwitchAllianceTimeDefense() {
+		return switchAllianceTimeDefense;
 	}
 	
-	public void setSwitchTimeDefense(double switchTimeDefense) {
-		this.switchTimeDefense = switchTimeDefense;
+	public void setSwitchAllianceTimeDefense(double switchAllianceTimeDefense) {
+		this.switchAllianceTimeDefense = switchAllianceTimeDefense;
 	}
 	
-	public double getSwitchTimeNeutral() {
-		return switchTimeNeutral;
+	//get and set time to deliver to own switch without defense
+	public double getSwitchAllianceTimeNeutral() {
+		return switchAllianceTimeNeutral;
 	}
 	
-	public void setSwitchTimeNeutral(double switchTimeNeutral) {
-		this.switchTimeNeutral = switchTimeNeutral;
+	public void setSwitchAllianceTimeNeutral(double switchAllianceTimeNeutral) {
+		this.switchAllianceTimeNeutral = switchAllianceTimeNeutral;
 	}
 	
+	//get and set time to deliver to opponent's switch
+	public double getSwitchOpponentTime() {
+		return switchOpponentTime;
+	}
 	
+	public void setSwitchOpponentTime(double switchOpponentTime) {
+		this.switchOpponentTime = switchOpponentTime;
+	}
+	
+	//get and set time to deliver to scale when defended
 	public double getScaleTimeDefense() {
 		return scaleTimeDefense;
 	}
@@ -35,6 +46,7 @@ public class Robot {
 		this.scaleTimeDefense = scaleTimeDefense;
 	}
 	
+	//get and set time to deliver to scale without defense
 	public double getScaleTimeNeutral() {
 		return scaleTimeNeutral;
 	}
@@ -43,6 +55,7 @@ public class Robot {
 		this.scaleTimeNeutral = scaleTimeNeutral;
 	}
 	
+	//get and set climb time
 	public double getClimbTime() {
 		return climbTime;
 	}
@@ -51,12 +64,13 @@ public class Robot {
 		this.climbTime = climbTime;
 	}
 	
-	public double getExchangeTime() {
-		return exchangeTime;
+	//get and set time to deliver to the vault
+	public double getVaultTime() {
+		return vaultTime;
 	}
 	
-	public void setExchangeTime(double exchangeTime) {
-		this.exchangeTime = exchangeTime;
+	public void setVaultTime(double vaultTime) {
+		this.vaultTime = vaultTime;
 	}
 
 }
