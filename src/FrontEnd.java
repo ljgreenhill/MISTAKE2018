@@ -88,7 +88,7 @@ public class FrontEnd extends JFrame {
 		B3 = new JLabel("B3");
 		redScore = new JLabel("RED SCORE:");
 		blueScore = new JLabel("BLUE SCORE:");
-		A1 = new JCheckBox(" ");
+		A1 = new JCheckBox();
 		A2 = new JCheckBox(" ");
 		A3 = new JCheckBox(" ");
 		A4 = new JCheckBox(" ");
@@ -159,19 +159,19 @@ public class FrontEnd extends JFrame {
 		mistake.setFont(new Font(fontName, Font.BOLD, 50));
 		mistake.setForeground(Color.black);
 		
-		R1.setBounds(10, 100, 50, 50);
+		R1.setBounds(10, 120, 50, 50);
 		R1.setFont(new Font(fontName, Font.BOLD, 30));
 		R1.setForeground(Color.red);
 		
-		R2.setBounds(10, 175, 50, 50);
+		R2.setBounds(10, 190, 50, 50);
 		R2.setFont(new Font(fontName, Font.BOLD, 30));
 		R2.setForeground(Color.red);
 		
-		R3.setBounds(10, 250, 50, 50);
+		R3.setBounds(10, 260, 50, 50);
 		R3.setFont(new Font(fontName, Font.BOLD, 30));
 		R3.setForeground(Color.red);
 		
-		B1.setBounds(10, 325, 50, 50);
+		B1.setBounds(10, 330, 50, 50);
 		B1.setFont(new Font(fontName, Font.BOLD, 30));
 		B1.setForeground(Color.blue);
 		
@@ -179,7 +179,7 @@ public class FrontEnd extends JFrame {
 		B2.setFont(new Font(fontName, Font.BOLD, 30));
 		B2.setForeground(Color.blue);
 		
-		B3.setBounds(10, 475, 50, 50);
+		B3.setBounds(10, 470, 50, 50);
 		B3.setFont(new Font(fontName, Font.BOLD, 30));
 		B3.setForeground(Color.blue);
 		
@@ -191,10 +191,150 @@ public class FrontEnd extends JFrame {
 		redScore.setFont(new Font(fontName, Font.BOLD, 30));
 		redScore.setForeground(Color.red);
 		
-		A1.setBounds(1000, 550, 300, 50);
+		A1.setBounds(175, 120, 50, 50);
 		A1.setFont(new Font(fontName, Font.BOLD, 30));
-		A1.setForeground(Color.red);
-
+		A1.setBackground(Color.red);
+		
+		A2.setBounds(175, 190, 50, 50);
+		A2.setFont(new Font(fontName, Font.BOLD, 30));
+		A2.setBackground(Color.red);
+		
+		A3.setBounds(175, 260, 50, 50);
+		A3.setFont(new Font(fontName, Font.BOLD, 30));
+		A3.setBackground(Color.red);
+		
+		A4.setBounds(175, 330, 50, 50);
+		A4.setFont(new Font(fontName, Font.BOLD, 30));
+		A4.setBackground(Color.blue);
+		
+		A5.setBounds(175, 400, 50, 50);
+		A5.setFont(new Font(fontName, Font.BOLD, 30));
+		A5.setBackground(Color.blue);
+		
+		A6.setBounds(175, 470, 50, 50);
+		A6.setFont(new Font(fontName, Font.BOLD, 30));
+		A6.setBackground(Color.blue);
+		
+		C1.setBounds(450, 120, 50, 50);
+		C1.setFont(new Font(fontName, Font.BOLD, 30));
+		C1.setBackground(Color.red);
+		
+		C2.setBounds(450, 190, 50, 50);
+		C2.setFont(new Font(fontName, Font.BOLD, 30));
+		C2.setBackground(Color.red);
+		
+		C3.setBounds(450, 260, 50, 50);
+		C3.setFont(new Font(fontName, Font.BOLD, 30));
+		C3.setBackground(Color.red);
+		
+		C4.setBounds(450, 330, 50, 50);
+		C4.setFont(new Font(fontName, Font.BOLD, 30));
+		C4.setBackground(Color.blue);
+		
+		C5.setBounds(450, 400, 50, 50);
+		C5.setFont(new Font(fontName, Font.BOLD, 30));
+		C5.setBackground(Color.blue);
+		
+		C6.setBounds(450, 470, 50, 50);
+		C6.setFont(new Font(fontName, Font.BOLD, 30));
+		C6.setBackground(Color.blue);
+		
+		D1.setBounds(710, 120, 50, 50);
+		D1.setFont(new Font(fontName, Font.BOLD, 30));
+		D1.setBackground(Color.red);
+		
+		D2.setBounds(710, 190, 50, 50);
+		D2.setFont(new Font(fontName, Font.BOLD, 30));
+		D2.setBackground(Color.red);
+	
+		D3.setBounds(710, 260, 50, 50);
+		D3.setFont(new Font(fontName, Font.BOLD, 30));
+		D3.setBackground(Color.red);
+	
+		D4.setBounds(710, 330, 50, 50);
+		D4.setFont(new Font(fontName, Font.BOLD, 30));
+		D4.setBackground(Color.blue);
+		
+		D5.setBounds(710, 400, 50, 50);
+		D5.setFont(new Font(fontName, Font.BOLD, 30));
+		D5.setBackground(Color.blue);
+		
+		D6.setBounds(710, 470, 50, 50);
+		D6.setFont(new Font(fontName, Font.BOLD, 30));
+		D6.setBackground(Color.blue);
+		
+		E1.setBounds(930, 120, 50, 50);
+		E1.setFont(new Font(fontName, Font.BOLD, 30));
+		E1.setBackground(Color.red);
+		
+		E2.setBounds(930, 190, 50, 50);
+		E2.setFont(new Font(fontName, Font.BOLD, 30));
+		E2.setBackground(Color.red);
+	
+		E3.setBounds(930, 260, 50, 50);
+		E3.setFont(new Font(fontName, Font.BOLD, 30));
+		E3.setBackground(Color.red);
+	
+		E4.setBounds(930, 330, 50, 50);
+		E4.setFont(new Font(fontName, Font.BOLD, 30));
+		E4.setBackground(Color.blue);
+		
+		E5.setBounds(930, 400, 50, 50);
+		E5.setFont(new Font(fontName, Font.BOLD, 30));
+		E5.setBackground(Color.blue);
+		
+		E6.setBounds(930, 470, 50, 50);
+		E6.setFont(new Font(fontName, Font.BOLD, 30));
+		E6.setBackground(Color.blue);
+		
+		F1.setBounds(1120, 120, 50, 50);
+		F1.setFont(new Font(fontName, Font.BOLD, 30));
+		F1.setBackground(Color.red);
+		
+		F2.setBounds(1120, 190, 50, 50);
+		F2.setFont(new Font(fontName, Font.BOLD, 30));
+		F2.setBackground(Color.red);
+	
+		F3.setBounds(1120, 260, 50, 50);
+		F3.setFont(new Font(fontName, Font.BOLD, 30));
+		F3.setBackground(Color.red);
+	
+		F4.setBounds(1120, 330, 50, 50);
+		F4.setFont(new Font(fontName, Font.BOLD, 30));
+		F4.setBackground(Color.blue);
+		
+		F5.setBounds(1120, 400, 50, 50);
+		F5.setFont(new Font(fontName, Font.BOLD, 30));
+		F5.setBackground(Color.blue);
+		
+		F6.setBounds(1120, 470, 50, 50);
+		F6.setFont(new Font(fontName, Font.BOLD, 30));
+		F6.setBackground(Color.blue);
+		
+		G1.setBounds(1260, 120, 50, 50);
+		G1.setFont(new Font(fontName, Font.BOLD, 30));
+		G1.setBackground(Color.red);
+	
+		G2.setBounds(1260, 190, 50, 50);
+		G2.setFont(new Font(fontName, Font.BOLD, 30));
+		G2.setBackground(Color.red);
+	
+		G3.setBounds(1260, 260, 50, 50);
+		G3.setFont(new Font(fontName, Font.BOLD, 30));
+		G3.setBackground(Color.red);
+	
+		G4.setBounds(1260, 330, 50, 50);
+		G4.setFont(new Font(fontName, Font.BOLD, 30));
+		G4.setBackground(Color.blue);
+		
+		G5.setBounds(1260, 400, 50, 50);
+		G5.setFont(new Font(fontName, Font.BOLD, 30));
+		G5.setBackground(Color.blue);
+		
+		G6.setBounds(1260, 470, 50, 50);
+		G6.setFont(new Font(fontName, Font.BOLD, 30));
+		G6.setBackground(Color.blue);
+		
 		panel.add(start);
 		panel.add(allianceSwitch);
 		panel.add(opponentSwitch);
@@ -246,7 +386,7 @@ public class FrontEnd extends JFrame {
 		panel.add(G3);
 		panel.add(G4);
 		panel.add(G5);
-		panel.add(G6);
+		panel.add(G6); 
 		
 
 		
