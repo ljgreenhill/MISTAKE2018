@@ -109,7 +109,7 @@ public class FrontEnd extends JFrame {
 		D5 = new JCheckBox();
 		D6 = new JCheckBox();
 		
-		String[] defenseStrings = { "noDefense", "allianceSwitchDefense", "opponentSwitchDefense", "scaleDefense", "vaultDefense" };
+		String[] defenseStrings = { "Robot1", "Robot2", "Robot3"};
 		JComboBox E1 = new JComboBox(defenseStrings);
 		E1.setSelectedIndex(0);
 		

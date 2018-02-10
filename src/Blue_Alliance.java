@@ -1,4 +1,4 @@
-
+/*
 public class Blue_Alliance {
 	
 	public static boolean blueScaleDefense = false; //the blue alliance is guarding the scale
@@ -18,41 +18,41 @@ public class Blue_Alliance {
 	    case "scale": Robot.mode = "scale";
 	    
 	      if(Red_Alliance.redScaleDefense == true) {
-      	    scaleCubes = Robot.getScaleTimeDefense()/Robot.findMatchTime();
+      	    scaleCubes = Robot.findMatchTime()/Robot.getScaleTimeDefense();
           }
           else {
-      	    scaleCubes = Robot.getScaleTimeNeutral()/Robot.findMatchTime();
+      	    scaleCubes = Robot.findMatchTime()/Robot.getScaleTimeNeutral();
           }
 	    break;
 	  
         case "opponentSwitch": Robot.mode = "opponentSwitch";
           if(Red_Alliance.redAllianceSwitchDefense == true) {
-        	  opponentSwitchCubes = Robot.getSwitchOpponentTimeDefense()/Robot.findMatchTime();
+        	  opponentSwitchCubes = Robot.findMatchTime()/Robot.getSwitchOpponentTimeDefense();
           }
           else {
-        	opponentSwitchCubes = Robot.getSwitchOpponentTimeNeutral()/Robot.findMatchTime();	  
+        	opponentSwitchCubes = Robot.findMatchTime()/Robot.getSwitchOpponentTimeNeutral();	  
           }
         break;
         
         case "allianceSwitch": Robot.mode = "allianceSwitch";
           if(Red_Alliance.redOpponentSwitchDefense == true) {
-        	  allianceSwitchCubes = Robot.getSwitchAllianceTimeDefense()/Robot.findMatchTime();
+        	  allianceSwitchCubes = Robot.findMatchTime()/Robot.getSwitchAllianceTimeDefense();
           }
           else {
-        	  allianceSwitchCubes = Robot.getSwitchAllianceTimeNeutral()/Robot.findMatchTime();
+        	  allianceSwitchCubes = Robot.findMatchTime()/Robot.getSwitchAllianceTimeNeutral();
           }
           
         break;
         
         case "vault": Robot.mode = "vault";
           if(Red_Alliance.redOpponentVaultDefense == true) {
-        	  vaultCubes = Robot.getVaultTimeDefense()/Robot.findMatchTime();
+        	  vaultCubes = Robot.findMatchTime()/Robot.getVaultTimeDefense();
           }
           else {
-        	  vaultCubes = Robot.getVaultTimeNeutral()/Robot.findMatchTime();
+        	  vaultCubes = Robot.findMatchTime()/Robot.getVaultTimeNeutral();
           }
         break;        
-      } // end of switch statement
+       } // end of switch statement
 		
 		//find if blue alliance robot is playing defense on the scale
 		if(BlueRobot1.getMode() == "allianceScaleDefense") {
@@ -151,3 +151,4 @@ public class Blue_Alliance {
 	
 
 }
+*/

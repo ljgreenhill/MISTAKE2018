@@ -8,20 +8,16 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		Robot RedRobot1 = new Robot();
-		Robot RedRobot2 = new Robot();
-		Robot RedRobot3 = new Robot();
 		
-		Robot BlueRobot1 = new Robot();
-		Robot BlueRobot2 = new Robot();
-		Robot BlueRobot3 = new Robot();
+		Alliance BlueAlliance = new Alliance("blue", new Robot(), new Robot(), new Robot());
+		Alliance RedAlliance = new Alliance("red", new Robot(), new Robot(), new Robot());
 		
 		
-		FrontEnd myFrontEnd = new FrontEnd(RedRobot1, RedRobot2, RedRobot3, BlueRobot1, BlueRobot2, BlueRobot3);
 		
-		Blue_Alliance myBlue_Alliance = new Blue_Alliance(BlueRobot1, BlueRobot2, BlueRobot3);
 		
-		Red_Alliance myRed_Alliance = new Red_Alliance(RedRobot1, RedRobot2, RedRobot3);
+		FrontEnd myFrontEnd = new FrontEnd(BlueAlliance.getRobot1(), BlueAlliance.getRobot2(), BlueAlliance.getRobot2(), RedAlliance.getRobot1(), RedAlliance.getRobot2(), RedAlliance.getRobot3());
+		
+		
 		
 		
 		

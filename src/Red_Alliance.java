@@ -1,4 +1,4 @@
-
+/*
 
 
 public class Red_Alliance {
@@ -15,11 +15,13 @@ public class Red_Alliance {
 	
   public Red_Alliance (Robot RedRobot1, Robot RedRobot2, Robot RedRobot3) {
 	  
+	
+	  
 	 
 	  
-	  switch(Robot.mode) {
+	  switch(RedRobot1.mode) {
 	  
-	    case "scale": Robot.mode = "scale";
+	    case "scale": 
 	    
 	      if(Blue_Alliance.blueScaleDefense == true) {
       	    scaleCubes = Robot.getScaleTimeDefense()/Robot.findMatchTime();
@@ -29,31 +31,31 @@ public class Red_Alliance {
           }
 	    break;
 	  
-        case "opponentSwitch": Robot.mode = "opponentSwitch";
+        case "opponentSwitch": 
           if(Blue_Alliance.blueAllianceSwitchDefense == true) {
-        	  opponentSwitchCubes = Robot.getSwitchOpponentTimeDefense()/Robot.findMatchTime();
+        	  opponentSwitchCubes = Robot.findMatchTime()/Robot.getSwitchOpponentTimeDefense();
           }
           else {
-        	opponentSwitchCubes = Robot.getSwitchOpponentTimeNeutral()/Robot.findMatchTime();	  
+        	opponentSwitchCubes = Robot.findMatchTime()/Robot.getSwitchOpponentTimeNeutral();	  
           }
         break;
         
-        case "allianceSwitch": Robot.mode = "allianceSwitch";
+        case "allianceSwitch": 
           if(Blue_Alliance.blueOpponentSwitchDefense == true) {
-        	  allianceSwitchCubes = Robot.getSwitchAllianceTimeDefense()/Robot.findMatchTime();
+        	  allianceSwitchCubes = Robot.findMatchTime()/Robot.getSwitchAllianceTimeDefense();
           }
           else {
-        	  allianceSwitchCubes = Robot.getSwitchAllianceTimeNeutral()/Robot.findMatchTime();
+        	  allianceSwitchCubes = Robot.findMatchTime()/Robot.getSwitchAllianceTimeNeutral();
           }
           
         break;
         
         case "vault": Robot.mode = "vault";
           if(Blue_Alliance.blueOpponentVaultDefense == true) {
-        	  vaultCubes = Robot.getVaultTimeDefense()/Robot.findMatchTime();
+        	  vaultCubes = Robot.findMatchTime()/Robot.getVaultTimeDefense();
           }
           else {
-        	  vaultCubes = Robot.getVaultTimeNeutral()/Robot.findMatchTime();
+        	  vaultCubes = Robot.findMatchTime()/Robot.getVaultTimeNeutral();
           }
         break;        
       } // end of switch statement
@@ -150,4 +152,4 @@ public class Red_Alliance {
 		
 }
 
-
+*/
