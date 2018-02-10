@@ -17,7 +17,7 @@ public class FrontEnd extends JFrame {
 	JLabel opponentSwitch;
 	JLabel scale;
 	JLabel defense;
-	JLabel climb;
+    JLabel climb1;
 	JLabel vault;
 	JLabel mistake;
 	JLabel R1;
@@ -46,12 +46,13 @@ public class FrontEnd extends JFrame {
 	JCheckBox D4;
 	JCheckBox D5;
 	JCheckBox D6;
-	JCheckBox E1;
-	JCheckBox E2;
-	JCheckBox E3;
-	JCheckBox E4;
-	JCheckBox E5;
-	JCheckBox E6;
+    JComboBox E1;
+	JComboBox E2;
+	JComboBox E3;
+	JComboBox E4;
+	JComboBox E5;
+	JComboBox E6;
+	
 	JCheckBox F1;
 	JCheckBox F2;
 	JCheckBox F3;
@@ -78,7 +79,7 @@ public class FrontEnd extends JFrame {
 		opponentSwitch = new JLabel("Opponent Switch");
 		scale = new JLabel("Scale");
 		defense = new JLabel("Defense");
-		climb = new JLabel("Climb");
+		climb1 = new JLabel("Climb");
 		vault = new JLabel("Vault");
 		mistake = new JLabel("MISTAKE");
 		R1 = new JLabel("R1");
@@ -107,12 +108,26 @@ public class FrontEnd extends JFrame {
 		D4 = new JCheckBox();
 		D5 = new JCheckBox();
 		D6 = new JCheckBox();
-		E1 = new JCheckBox();
-		E2 = new JCheckBox();
-		E3 = new JCheckBox();
-		E4 = new JCheckBox();
-		E5 = new JCheckBox();
-		E6 = new JCheckBox();
+		
+		String[] defenseStrings = { "noDefense", "allianceSwitchDefense", "opponentSwitchDefense", "scaleDefense", "vaultDefense" };
+		JComboBox E1 = new JComboBox(defenseStrings);
+		E1.setSelectedIndex(0);
+		
+		JComboBox E2 = new JComboBox(defenseStrings);
+		E2.setSelectedIndex(0);
+		
+		JComboBox E3 = new JComboBox(defenseStrings);
+		E3.setSelectedIndex(0);
+		
+		JComboBox E4 = new JComboBox(defenseStrings);
+		E4.setSelectedIndex(0);
+		
+		JComboBox E5 = new JComboBox(defenseStrings);
+		E5.setSelectedIndex(0);
+		
+		JComboBox E6 = new JComboBox(defenseStrings);
+		E6.setSelectedIndex(0);
+		
 		F1 = new JCheckBox();
 		F2 = new JCheckBox();
 		F3 = new JCheckBox();
@@ -124,7 +139,7 @@ public class FrontEnd extends JFrame {
 		G3 = new JCheckBox();
 		G4 = new JCheckBox();
 		G5 = new JCheckBox();
-		G6 = new JCheckBox();
+		G6 = new JCheckBox(); 
 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		panel.setLayout(null);
@@ -152,9 +167,9 @@ public class FrontEnd extends JFrame {
 		vault.setFont(new Font(fontName, Font.BOLD, 25));
 		vault.setForeground(Color.black);
 		
-		climb.setBounds(1250, 50, 300, 100);
-		climb.setFont(new Font(fontName, Font.BOLD, 25));
-		climb.setForeground(Color.black);
+		climb1.setBounds(1250, 50, 300, 100);
+		climb1.setFont(new Font(fontName, Font.BOLD, 25));
+		climb1.setForeground(Color.black);
 		
 		mistake.setBounds(560, 0, 300, 100);
 		mistake.setFont(new Font(fontName, Font.BOLD, 50));
@@ -391,71 +406,89 @@ public class FrontEnd extends JFrame {
 			}
 		});
 		
-		E1.setBounds(930, 120, 50, 50);
-		E1.setFont(new Font(fontName, Font.BOLD, 30));
+		E1.setBounds(850, 120, 175, 50);
+		E1.setFont(new Font(fontName, Font.BOLD, 20));
 		E1.setBackground(Color.red);
 		E1.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				RedRobot1.setMode("defense");
+			  String defenseMode = (String)E1.getSelectedItem();
+			  RedRobot1.setMode(defenseMode);
+			     
 			}
 		});
 		
-		E2.setBounds(930, 190, 50, 50);
-		E2.setFont(new Font(fontName, Font.BOLD, 30));
+		
+		E2.setBounds(850, 190, 175, 50);
+		E2.setFont(new Font(fontName, Font.BOLD, 20));
 		E2.setBackground(Color.red);
 		E2.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				RedRobot2.setMode("defense");
+		      String defenseMode = (String)E2.getSelectedItem();
+			  RedRobot2.setMode(defenseMode);
+			     
 			}
 		});
+		
 	
-		E3.setBounds(930, 260, 50, 50);
-		E3.setFont(new Font(fontName, Font.BOLD, 30));
+		E3.setBounds(850, 260, 175, 50);
+		E3.setFont(new Font(fontName, Font.BOLD, 20));
 		E3.setBackground(Color.red);
 		E3.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				RedRobot3.setMode("defense");
+		      String defenseMode = (String)E3.getSelectedItem();
+			  RedRobot3.setMode(defenseMode);
+			     
 			}
 		});
+		
 	
-		E4.setBounds(930, 330, 50, 50);
-		E4.setFont(new Font(fontName, Font.BOLD, 30));
+		E4.setBounds(850, 330, 175, 50);
+		E4.setFont(new Font(fontName, Font.BOLD, 20));
 		E4.setBackground(Color.blue);
 		E4.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				BlueRobot1.setMode("defense");
+		      String defenseMode = (String)E4.getSelectedItem();
+			  BlueRobot1.setMode(defenseMode);
+			     
 			}
 		});
 		
-		E5.setBounds(930, 400, 50, 50);
-		E5.setFont(new Font(fontName, Font.BOLD, 30));
+		
+		E5.setBounds(850, 400, 175, 50);
+		E5.setFont(new Font(fontName, Font.BOLD, 20));
 		E5.setBackground(Color.blue);
 		E5.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				BlueRobot2.setMode("defense");
+		      String defenseMode = (String)E5.getSelectedItem();
+			  BlueRobot2.setMode(defenseMode);
+			     
 			}
 		});
 		
-		E6.setBounds(930, 470, 50, 50);
-		E6.setFont(new Font(fontName, Font.BOLD, 30));
+		
+		E6.setBounds(850, 470, 175, 50);
+		E6.setFont(new Font(fontName, Font.BOLD, 20));
 		E6.setBackground(Color.blue);
 		E6.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				BlueRobot3.setMode("defense");
+		      String defenseMode = (String)E6.getSelectedItem();
+			  BlueRobot3.setMode(defenseMode);
+			     
 			}
 		});
+		
 		
 		F1.setBounds(1120, 120, 50, 50);
 		F1.setFont(new Font(fontName, Font.BOLD, 30));
@@ -594,7 +627,7 @@ public class FrontEnd extends JFrame {
 		panel.add(opponentSwitch);
 		panel.add(scale);
 		panel.add(defense);
-		panel.add(climb);
+		panel.add(climb1);
 		panel.add(vault);
 		panel.add(mistake);
 		panel.add(R1);
@@ -623,12 +656,12 @@ public class FrontEnd extends JFrame {
 		panel.add(D4);
 		panel.add(D5);
 		panel.add(D6);
-		panel.add(E1);
+	    panel.add(E1);
 		panel.add(E2);
 		panel.add(E3);
 		panel.add(E4);
 		panel.add(E5);
-		panel.add(E6);
+		panel.add(E6); 
 		panel.add(F1);
 		panel.add(F2);
 		panel.add(F3);

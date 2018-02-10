@@ -1,7 +1,7 @@
 
 public class Main {
 	
-	final static long MATCH_TIME = 135;
+	final static double GAME_TIME = 135;
 	
 	
 	
@@ -18,6 +18,10 @@ public class Main {
 		
 		
 		FrontEnd myFrontEnd = new FrontEnd(RedRobot1, RedRobot2, RedRobot3, BlueRobot1, BlueRobot2, BlueRobot3);
+		
+		Blue_Alliance myBlue_Alliance = new Blue_Alliance(BlueRobot1, BlueRobot2, BlueRobot3);
+		
+		Red_Alliance myRed_Alliance = new Red_Alliance(RedRobot1, RedRobot2, RedRobot3);
 		
 		
 		

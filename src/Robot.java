@@ -2,15 +2,16 @@
 public class Robot {
 	
 
-	double switchAllianceTimeDefense;
-	double switchAllianceTimeNeutral;
-	double switchOpponentTime;
-	double scaleTimeDefense;
-	double scaleTimeNeutral;
-	double climbTime;
-	double vaultTime;
-	String mode;
-	boolean climb = false;
+	static double switchAllianceTimeDefense;
+	static double switchAllianceTimeNeutral;
+	static double switchOpponentTime;
+	static double scaleTimeDefense;
+	static double scaleTimeNeutral;
+	static double climbTime;
+	static double vaultTime;
+	static String mode;
+	public static boolean climb = false;
+	static double MATCH_TIME;
 	
 	public Robot () {}
 	
@@ -23,7 +24,7 @@ public class Robot {
 		this.mode = mode;
 	}
 	
-	public boolean getClimb() {
+	public static boolean getClimb() {
 		return climb;
 	}
 	
@@ -32,7 +33,7 @@ public class Robot {
 	}
 	
 	//get and set time to deliver to own switch when defended
-	public double getSwitchAllianceTimeDefense() {
+	public static double getSwitchAllianceTimeDefense() {
 		return switchAllianceTimeDefense;
 	}
 	
@@ -41,7 +42,7 @@ public class Robot {
 	}
 	
 	//get and set time to deliver to own switch without defense
-	public double getSwitchAllianceTimeNeutral() {
+	public static double getSwitchAllianceTimeNeutral() {
 		return switchAllianceTimeNeutral;
 	}
 	
@@ -50,7 +51,7 @@ public class Robot {
 	}
 	
 	//get and set time to deliver to opponent's switch
-	public double getSwitchOpponentTime() {
+	public static double getSwitchOpponentTime() {
 		return switchOpponentTime;
 	}
 	
@@ -59,7 +60,7 @@ public class Robot {
 	}
 	
 	//get and set time to deliver to scale when defended
-	public double getScaleTimeDefense() {
+	public static double getScaleTimeDefense() {
 		return scaleTimeDefense;
 	}
 	
@@ -68,7 +69,7 @@ public class Robot {
 	}
 	
 	//get and set time to deliver to scale without defense
-	public double getScaleTimeNeutral() {
+	public static double getScaleTimeNeutral() {
 		return scaleTimeNeutral;
 	}
 	
@@ -77,7 +78,7 @@ public class Robot {
 	}
 	
 	//get and set climb time
-	public double getClimbTime() {
+	public static double getClimbTime() {
 		return climbTime;
 	}
 	
@@ -86,13 +87,25 @@ public class Robot {
 	}
 	
 	//get and set time to deliver to the vault
-	public double getVaultTime() {
+	public static double getVaultTime() {
 		return vaultTime;
 	}
 	
 	public void setVaultTime(double vaultTime) {
 		this.vaultTime = vaultTime;
 	}
+	
+	public static double findMatchTime() {
+		if(Robot.climb == true) {
+			MATCH_TIME = Main.GAME_TIME - Robot.getClimbTime();
+		}
+		else {
+			MATCH_TIME = 135;
+		}
+		return MATCH_TIME;
+	}
+	
+	
 	
 /*	//get and set robot mode
 	public String getMode() {
