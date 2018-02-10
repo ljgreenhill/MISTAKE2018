@@ -4,11 +4,13 @@ public class Robot {
 
 	static double switchAllianceTimeDefense;
 	static double switchAllianceTimeNeutral;
-	static double switchOpponentTime;
+	static double switchOpponentTimeDefense;
+	static double switchOpponentTimeNeutral;
 	static double scaleTimeDefense;
 	static double scaleTimeNeutral;
 	static double climbTime;
-	static double vaultTime;
+	static double vaultTimeDefense;
+	static double vaultTimeNeutral;
 	static String mode;
 	public static boolean climb = false;
 	static double MATCH_TIME;
@@ -50,13 +52,22 @@ public class Robot {
 		this.switchAllianceTimeNeutral = switchAllianceTimeNeutral;
 	}
 	
-	//get and set time to deliver to opponent's switch
-	public static double getSwitchOpponentTime() {
-		return switchOpponentTime;
+	//get and set time to deliver to opponent's switch with defense
+	public static double getSwitchOpponentTimeDefense() {
+		return switchOpponentTimeDefense;
 	}
 	
-	public void setSwitchOpponentTime(double switchOpponentTime) {
-		this.switchOpponentTime = switchOpponentTime;
+	public void setSwitchOpponentTimeDefense(double switchOpponentTimeDefense) {
+		this.switchOpponentTimeDefense = switchOpponentTimeDefense;
+	}
+	
+	//get and set time to deliver to opponent's switch neutral
+	public static double getSwitchOpponentTimeNeutral() {
+		return switchOpponentTimeNeutral;
+	}
+		
+	public void setSwitchOpponentTimeNeutral(double switchOpponentTimeNeutral) {
+		this.switchOpponentTimeNeutral = switchOpponentTimeNeutral;
 	}
 	
 	//get and set time to deliver to scale when defended
@@ -86,13 +97,22 @@ public class Robot {
 		this.climbTime = climbTime;
 	}
 	
-	//get and set time to deliver to the vault
-	public static double getVaultTime() {
-		return vaultTime;
+	//get and set time to deliver to the vault with defense
+	public static double getVaultTimeDefense() {
+		return vaultTimeDefense;
 	}
 	
-	public void setVaultTime(double vaultTime) {
-		this.vaultTime = vaultTime;
+	public void setVaultTimeDefense(double vaultTimeDefense) {
+		this.vaultTimeDefense = vaultTimeDefense;
+	}
+	
+	//get and set time to deliver to the vault neutral
+	public static double getVaultTimeNeutral() {
+		return vaultTimeNeutral;
+	}
+		
+	public void setVaultTimeNeutral(double vaultTimeNeutral) {
+		this.vaultTimeNeutral = vaultTimeNeutral;
 	}
 	
 	public static double findMatchTime() {
