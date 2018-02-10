@@ -14,6 +14,7 @@ public class Robot {
 	private String mode;
 	private boolean climb;
 	double MATCH_TIME;
+	int target;
 	
 	public Robot () {
 		this.climb = false;
@@ -125,6 +126,16 @@ public class Robot {
 			MATCH_TIME = 135;
 		}
 		return MATCH_TIME;
+	}
+	
+	
+	public void setTarget(int target) {
+		this.target = target;
+		
+	}
+	
+	public int getTarget() {
+		return target;
 	}
 	
 	

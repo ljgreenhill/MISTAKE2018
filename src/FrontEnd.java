@@ -109,23 +109,23 @@ public class FrontEnd extends JFrame {
 		D5 = new JCheckBox();
 		D6 = new JCheckBox();
 		
-		String[] defenseStrings = { "Robot1", "Robot2", "Robot3"};
-		JComboBox E1 = new JComboBox(defenseStrings);
+		Integer[] defenseInts = { 1, 2, 3};
+		JComboBox E1 = new JComboBox(defenseInts);
 		E1.setSelectedIndex(0);
 		
-		JComboBox E2 = new JComboBox(defenseStrings);
+		JComboBox E2 = new JComboBox(defenseInts);
 		E2.setSelectedIndex(0);
 		
-		JComboBox E3 = new JComboBox(defenseStrings);
+		JComboBox E3 = new JComboBox(defenseInts);
 		E3.setSelectedIndex(0);
 		
-		JComboBox E4 = new JComboBox(defenseStrings);
+		JComboBox E4 = new JComboBox(defenseInts);
 		E4.setSelectedIndex(0);
 		
-		JComboBox E5 = new JComboBox(defenseStrings);
+		JComboBox E5 = new JComboBox(defenseInts);
 		E5.setSelectedIndex(0);
 		
-		JComboBox E6 = new JComboBox(defenseStrings);
+		JComboBox E6 = new JComboBox(defenseInts);
 		E6.setSelectedIndex(0);
 		
 		F1 = new JCheckBox();
@@ -413,8 +413,9 @@ public class FrontEnd extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-			  String defenseMode = (String)E1.getSelectedItem();
-			  RedRobot1.setMode(defenseMode);
+				int defenseMode = ((Integer) E1.getSelectedItem()).intValue();
+				RedRobot1.setMode("defense");
+				RedRobot1.setTarget(defenseMode);
 			     
 			}
 		});
@@ -427,8 +428,9 @@ public class FrontEnd extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-		      String defenseMode = (String)E2.getSelectedItem();
-			  RedRobot2.setMode(defenseMode);
+		      int defenseMode = ((Integer) E2.getSelectedItem()).intValue();
+			  RedRobot2.setMode("defense");
+			  RedRobot2.setTarget(defenseMode);
 			     
 			}
 		});
@@ -441,8 +443,9 @@ public class FrontEnd extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-		      String defenseMode = (String)E3.getSelectedItem();
-			  RedRobot3.setMode(defenseMode);
+				int defenseMode = ((Integer) E3.getSelectedItem()).intValue();
+				RedRobot3.setMode("defense");
+				RedRobot3.setTarget(defenseMode);
 			     
 			}
 		});
@@ -455,8 +458,9 @@ public class FrontEnd extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-		      String defenseMode = (String)E4.getSelectedItem();
-			  BlueRobot1.setMode(defenseMode);
+				int defenseMode = ((Integer) E4.getSelectedItem()).intValue();
+				  BlueRobot1.setMode("defense");
+				  BlueRobot1.setTarget(defenseMode);
 			     
 			}
 		});
@@ -469,8 +473,9 @@ public class FrontEnd extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-		      String defenseMode = (String)E5.getSelectedItem();
-			  BlueRobot2.setMode(defenseMode);
+				int defenseMode = ((Integer) E5.getSelectedItem()).intValue();
+				  BlueRobot2.setMode("defense");
+				  BlueRobot2.setTarget(defenseMode);
 			     
 			}
 		});
@@ -483,8 +488,9 @@ public class FrontEnd extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-		      String defenseMode = (String)E6.getSelectedItem();
-			  BlueRobot3.setMode(defenseMode);
+				int defenseMode = ((Integer) E6.getSelectedItem()).intValue();
+				  BlueRobot3.setMode("defense");
+				  BlueRobot3.setTarget(defenseMode);
 			     
 			}
 		});
