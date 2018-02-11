@@ -3,7 +3,7 @@ public class Vault {
 	
 	int vaultCubes;
 	
-	public placeCube() {
+	public int placeCube() {
 		return vaultCubes;
 	}
 

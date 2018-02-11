@@ -138,6 +138,15 @@ public class Robot {
 		return target;
 	}
 	
+	public boolean isTarget() {
+		if(this.target = target) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
 	
 	
 /*	//get and set robot mode

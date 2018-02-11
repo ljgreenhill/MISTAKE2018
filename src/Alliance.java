@@ -90,6 +90,10 @@ public class Alliance {
 		return this.Robot3;
 	}
 	
+	public String getAllianceColor() {
+		return this.color;
+	}
+	
 	
 		
 
