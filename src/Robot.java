@@ -151,7 +151,7 @@ public class Robot {
 	
 	public boolean isTarget(Alliance opposingAlliance ) {
 		boolean result = false;
-		for(int i = 0; i<opposingAlliance.size(); i++) {
+		for(int i = 0; i<opposingAlliance.allianceRobots.size(); i++) {
 		  if(opposingAlliance.allianceRobots.getId().getTarget() == this.id) {
 		    result = true;
 		  }

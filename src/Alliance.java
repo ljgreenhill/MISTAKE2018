@@ -94,7 +94,7 @@ public class Alliance {
 		return this.color;
 	}
 	
-	public Alliance getOpposingAlliance(Alliance myAlliance) {
+	public Alliance getOpposingAlliance(Alliance myAlliance, Alliance BlueAlliance, Alliance RedAlliance) {
 		Alliance opposingAlliance;
 		if(myAlliance.getAllianceColor() == "red") {
 			opposingAlliance = BlueAlliance;
