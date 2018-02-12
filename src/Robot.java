@@ -141,7 +141,7 @@ public class Robot {
 		return target;
 	}
 	
-	public int setId(int id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	
@@ -152,12 +152,14 @@ public class Robot {
 	public boolean isTarget(Alliance opposingAlliance ) {
 		boolean result = false;
 		for(int i = 0; i<opposingAlliance.allianceRobots.size(); i++) {
-		  if(opposingAlliance.allianceRobots.getId().getTarget() == this.id) {
+		  if(opposingAlliance.allianceRobots.get(i).getTarget() == this.id) {
 		    result = true;
 		  }
 		  else {
 		    result = false;
 		}
+		
+	  }
 		return result;
 	}
 	
