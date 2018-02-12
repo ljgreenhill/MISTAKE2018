@@ -163,6 +163,15 @@ public class Robot {
 		return result;
 	}
 	
+	public String getRobotAlliance(Alliance myAlliance, Robot myRobot) {
+	  if(myAlliance.allianceRobots.contains(myRobot)) {
+		  return "blue";
+	  }
+	  else {
+		  return "red";
+	  }
+	}
+	
 	
 	
 /*	//get and set robot mode

@@ -1,7 +1,7 @@
 
 public class Main {
 	
-	final static double GAME_TIME = 135;
+	static double GAME_TIME = 135;
 	
 	public enum Side {
 		red, blue
@@ -11,8 +11,9 @@ public class Main {
 		neutral, red, blue
 	}
 	
-	int time;
-	int score;
+	public static int time;
+	
+	static int score;
 	
 	public int getTime() {
 		return this.time;
