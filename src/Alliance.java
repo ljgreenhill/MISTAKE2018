@@ -94,6 +94,14 @@ public class Alliance {
 		return this.color;
 	}
 	
+	public getOpposingAlliance() {
+		if(BlueAlliance) {
+			opposingAlliance = BlueAlliance
+		}
+		
+		return opposingAlliance;
+	}
+	
 	
 		
 

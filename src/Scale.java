@@ -13,11 +13,11 @@ public class Scale {
 	public Main.Control putCube(Robot scaleRobot, Main.Control state, int time) {
 		Main.Control tempState = state;
 		startTime = Main.time;
-		if(Robot.isTarget() == true) {
-			finalTime = (int) (startTime + Robot.getScaleTimeDefense());
+		if(scaleRobot.isTarget() == true) {
+			finalTime = (int) (startTime + scaleRobot.getScaleTimeDefense());
 		}
 		else {
-			finalTime = (int) (startTime + Robot.getScaleTimeNeutral());
+			finalTime = (int) (startTime + scaleRobot.getScaleTimeNeutral());
 		}
 		
 		return state;

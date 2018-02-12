@@ -15,9 +15,12 @@ public class Robot {
 	private boolean climb;
 	double MATCH_TIME;
 	int target;
+	int id;
 	
 	public Robot () {
 		this.climb = false;
+		this.target = 0;
+		this.id = 0;
 	}
 	
 
@@ -138,13 +141,24 @@ public class Robot {
 		return target;
 	}
 	
-	public boolean isTarget() {
-		if(this.target = target) {
-			return true;
+	public int setId(int id) {
+		this.id = id;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	
+	public boolean isTarget(Alliance opposingAlliance ) {
+		boolean result = false;
+		for(int i = 0; i<opposingAlliance.size(); i++) {
+		  if(opposingAlliance.allianceRobots.getId().getTarget() == this.id) {
+		    result = true;
+		  }
+		  else {
+		    result = false;
 		}
-		else {
-			return false;
-		}
+		return result;
 	}
 	
 	
