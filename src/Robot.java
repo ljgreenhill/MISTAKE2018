@@ -163,14 +163,29 @@ public class Robot {
 		return result;
 	}
 	
-	public String getRobotAlliance(Alliance myAlliance, Robot myRobot) {
+	public String getRobotAlliance(Alliance myAlliance, Robot myRobot, Alliance opponentAlliance) {
 	  if(myAlliance.allianceRobots.contains(myRobot)) {
-		  return "blue";
+		  return myAlliance.getAllianceColor();
 	  }
 	  else {
-		  return "red";
+		  return opponentAlliance.getAllianceColor();
 	  }
 	}
+	
+	public int getPutCubeTime(Robot scaleRobot, Alliance myAlliance, Alliance opposingAlliance){
+		int startTime = 0;
+		int finalTime;
+		
+		if(scaleRobot.isTarget(opposingAlliance) == true) {
+			finalTime = (int) (startTime + scaleRobot.getScaleTimeDefense());
+		}
+		else {
+			finalTime = (int) (startTime + scaleRobot.getScaleTimeNeutral());
+		}
+		
+		return finalTime;
+	}
+	
 	
 	
 	

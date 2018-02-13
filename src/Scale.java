@@ -10,7 +10,7 @@ public class Scale {
 	int finalTime = 0;
 	
 	
-	public Main.Control putCube(Robot scaleRobot, Main.Control state, Alliance myAlliance, Alliance opposingAlliance) {
+/*	public Main.Control putCube(Robot scaleRobot, Main.Control state, Alliance myAlliance, Alliance opposingAlliance) {
 		Main.Control tempState = state;
 		startTime = Main.time;
 		if(scaleRobot.getRobotAlliance(myAlliance, scaleRobot) == "red") {
@@ -37,6 +37,49 @@ public class Scale {
 		}
 		
 		return state;
+		
+	}*/
+	
+	/*public int getPutCubeTime(Robot scaleRobot, Main.Control state, Alliance myAlliance, Alliance opposingAlliance){
+		startTime = Main.time;
+		if(scaleRobot.isTarget(opposingAlliance) == true) {
+			finalTime = (int) (startTime + scaleRobot.getScaleTimeDefense());
+		}
+		else {
+			finalTime = (int) (startTime + scaleRobot.getScaleTimeNeutral());
+		}
+		
+		return finalTime;
+	}*/
+	
+	public Main.Control getState(Robot scaleRobot, Main.Control state, Alliance myAlliance, Alliance opposingAlliance) {
+		Main.Control tempState = state;
+		if(scaleRobot.getRobotAlliance(myAlliance, scaleRobot, opposingAlliance) == "red") {
+			redCube++;
+		}
+		else {
+			blueCube++;
+		}
+		if (blueCube < redCube) {
+			state = state.red;
+		}
+		else if (blueCube > redCube) {
+			state = state.blue;
+		}
+		else {
+			state = state.neutral;
+		}
+		
+		return state;
+	}
+	
+	//get number of cubes delivered in match
+	public int putCubeScale(Alliance myAlliance, Alliance opposingAlliance, Robot myRobot) {
+		int scaleCubesMatch = 0;
+		if(myAlliance.whoScale().contains(myRobot)) {
+			scaleCubesMatch = (int) (myRobot.findMatchTime()/myRobot.getPutCubeTime(myRobot, myAlliance, opposingAlliance)); 
+		}
+		return scaleCubesMatch;
 	}
 		
 	
