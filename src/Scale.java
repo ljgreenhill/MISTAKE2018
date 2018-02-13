@@ -9,6 +9,9 @@ public class Scale {
 	int startTime = 0;
 	int finalTime = 0;
 	
+	Timer timer = new Timer();
+	timer.schedule(new SayHello(), 0, 5000);
+	
 	
 /*	public Main.Control putCube(Robot scaleRobot, Main.Control state, Alliance myAlliance, Alliance opposingAlliance) {
 		Main.Control tempState = state;
@@ -54,7 +57,7 @@ public class Scale {
 	
 	public Main.Control getState(Robot scaleRobot, Main.Control state, Alliance myAlliance, Alliance opposingAlliance) {
 		Main.Control tempState = state;
-		if(scaleRobot.getRobotAlliance(myAlliance, scaleRobot, opposingAlliance) == "red") {
+		if(scaleRobot.getRobotAlliance(myAlliance, opposingAlliance) == "red") {
 			redCube++;
 		}
 		else {
@@ -77,7 +80,7 @@ public class Scale {
 	public int putCubeScale(Alliance myAlliance, Alliance opposingAlliance, Robot myRobot) {
 		int scaleCubesMatch = 0;
 		if(myAlliance.whoScale().contains(myRobot)) {
-			scaleCubesMatch = (int) (myRobot.findMatchTime()/myRobot.getPutCubeTime(myRobot, myAlliance, opposingAlliance)); 
+			scaleCubesMatch = (int) (myRobot.findMatchTime()/myRobot.getPlaceCubeTimeScale(myAlliance, opposingAlliance)); 
 		}
 		return scaleCubesMatch;
 	}

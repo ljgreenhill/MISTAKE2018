@@ -163,8 +163,8 @@ public class Robot {
 		return result;
 	}
 	
-	public String getRobotAlliance(Alliance myAlliance, Robot myRobot, Alliance opponentAlliance) {
-	  if(myAlliance.allianceRobots.contains(myRobot)) {
+	public String getRobotAlliance(Alliance myAlliance, Alliance opponentAlliance) {
+	  if(myAlliance.allianceRobots.contains(this)) {
 		  return myAlliance.getAllianceColor();
 	  }
 	  else {
@@ -172,16 +172,60 @@ public class Robot {
 	  }
 	}
 	
-	public int getPutCubeTime(Robot scaleRobot, Alliance myAlliance, Alliance opposingAlliance){
+	public int getPlaceCubeTimeScale(Alliance myAlliance, Alliance opposingAlliance){
 		int startTime = 0;
 		int finalTime;
 		
-		if(scaleRobot.isTarget(opposingAlliance) == true) {
-			finalTime = (int) (startTime + scaleRobot.getScaleTimeDefense());
+		if(this.isTarget(opposingAlliance) == true) {
+			finalTime = (int) (startTime + this.getScaleTimeDefense());
 		}
 		else {
-			finalTime = (int) (startTime + scaleRobot.getScaleTimeNeutral());
+			finalTime = (int) (startTime + this.getScaleTimeNeutral());
 		}
+		
+		return finalTime;
+	}
+	
+	public int getPlaceCubeTimeSwitchOpponent(Alliance myAlliance, Alliance opposingAlliance){
+		int startTime = 0;
+		int finalTime;
+		
+		if(this.isTarget(opposingAlliance) == true) {
+			finalTime = (int) (startTime + this.getSwitchOpponentTimeDefense());
+		}
+		else {
+			finalTime = (int) (startTime + this.getSwitchOpponentTimeNeutral());
+		}
+		
+		return finalTime;
+	}
+	
+	public int getPlaceCubeTimeSwitchAlliance(Alliance myAlliance, Alliance opposingAlliance){
+		int startTime = 0;
+		int finalTime;
+		
+		if(this.isTarget(opposingAlliance) == true) {
+			finalTime = (int) (startTime + this.getSwitchAllianceTimeDefense());
+		}
+		else {
+			finalTime = (int) (startTime + this.getSwitchAllianceTimeNeutral());
+		}
+		
+		
+		return finalTime;
+	}
+	
+	public int getPlaceCubeTimeVault(Alliance myAlliance, Alliance opposingAlliance){
+		int startTime = 0;
+		int finalTime;
+		
+		if(this.isTarget(opposingAlliance) == true) {
+			finalTime = (int) (startTime + this.getVaultTimeDefense());
+		}
+		else {
+			finalTime = (int) (startTime + this.getVaultTimeNeutral());
+		}
+		
 		
 		return finalTime;
 	}
