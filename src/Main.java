@@ -28,6 +28,8 @@ public class Main {
 	  Alliance RedAlliance = new Alliance("red", new Robot(), new Robot(), new Robot());
 	  FrontEnd myFrontEnd = new FrontEnd(BlueAlliance.getRobot1(), BlueAlliance.getRobot2(), BlueAlliance.getRobot2(), RedAlliance.getRobot1(), RedAlliance.getRobot2(), RedAlliance.getRobot3());
 	//  Scale myScale = new Scale (scaleRobot, Main.Control state, Main.getTime() );
+	  Score RedScore = new Score("red");
+	  Score BlueScore = new Score("blue");
 		
 		
 		
