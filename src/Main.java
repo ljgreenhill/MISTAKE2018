@@ -54,8 +54,9 @@ public class Main {
 	  for(time = 1; time <= 135; time ++) {
 		  for(int i = 0; i<scaleBots.size(); i++) {
 			  if(time != 0 && time%scaleBots.get(i).getPlaceCubeTimeScale(scaleBots.get(i).getMyAlliance(), scaleBots.get(i).getOpposingAlliance()) ==0 ) {
-				  
+				  myField.getScale().putCube(scaleBots.get(i), time, BlueScore, BlueScore);
 			  }
+			  if(time != 0 && time%scaleBots.get(i).getPlaceCubeTimeScale(allianceSwitchBots.get(i).getMyAlliance(), scaleBots.get(i).getOpposingAlliance()) ==0 )
 		  }
 	  
 	  

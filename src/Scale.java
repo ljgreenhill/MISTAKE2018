@@ -78,7 +78,7 @@ public class Scale {
 		return state;
 	} */
 	
-	public int getState(Robot scaleRobot, Main.Control state, Alliance myAlliance, Alliance opposingAlliance, Alliance BlueAlliance, Alliance RedAlliance) {
+/*	public int getState(Robot scaleRobot, Main.Control state, Alliance myAlliance, Alliance opposingAlliance, Alliance BlueAlliance, Alliance RedAlliance) {
 		Main.Control tempState = state;
 		int RedScore = 0;
 		int BlueScore = 0;
@@ -103,7 +103,7 @@ public class Scale {
 		 }
 	  }
 	return RedScore BlueScore;
-	}
+	}*/
 	
 	
 	//get number of cubes delivered in match
@@ -175,7 +175,6 @@ public class Scale {
 		else {
 			blueCube++;
 		}
-		
 		
 		Main.Control newState = this.getState();
 		
