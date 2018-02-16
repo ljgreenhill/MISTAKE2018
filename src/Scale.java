@@ -116,19 +116,19 @@ public class Scale {
 	}*/
 		
 	
-	public Main.Control getControl() {
+/*	public Main.Control getControl() {
 		Main.Control myControl = Main.Control.neutral;
 		return myControl;
-	}
+	}*/
 	
-	public void addToSide(Robot scaleRobot, Alliance myAlliance, Alliance opposingAlliance) {
+	/*public void addToSide(Robot scaleRobot, Alliance myAlliance, Alliance opposingAlliance) {
       if(scaleRobot.getRobotAlliance(myAlliance, opposingAlliance) == "red") {
     	  redCube++;
       }
       else {
     	  blueCube++;
       }
-	}
+	}*/
 	
 	public Main.Control getScaleState(){
       if (blueCube < redCube) {

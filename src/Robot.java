@@ -248,6 +248,28 @@ public class Robot {
 		return finalTime;
 	}
 	
+	/*public Switch getAllianceSwitch(Switch RedSwitch, Switch BlueSwitch) {
+		Switch AllianceSwitch;
+		if(this.getMyAlliance().getAllianceColor().equals("red")) {
+			AllianceSwitch = RedSwitch;
+		}
+		else {
+			AllianceSwitch = BlueSwitch;
+		}
+		return AllianceSwitch;
+	}
+	
+	public Switch getOpponentSwitch(Switch RedSwitch, Switch BlueSwitch) {
+		Switch OpponentSwitch;
+		if(this.getMyAlliance().getAllianceColor().equals("red")) {
+			OpponentSwitch = BlueSwitch;
+		}
+		else {
+			OpponentSwitch = RedSwitch;
+		}
+		return OpponentSwitch;
+	}*/
+	
 	
 	
 	
