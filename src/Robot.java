@@ -16,6 +16,8 @@ public class Robot {
 	double MATCH_TIME;
 	int target;
 	int id;
+	Alliance myAlliance;
+	Alliance opposingAlliance; 
 	
 	public Robot () {
 		this.climb = false;
@@ -30,6 +32,22 @@ public class Robot {
 	
 	public void setMode(String mode) {
 		this.mode = mode;
+	}
+	
+	public Alliance getMyAlliance() {
+		return myAlliance;
+	}
+	
+	public void setMyAlliance(Alliance myAlliance) {
+		this.myAlliance = myAlliance;
+	}
+	
+	public Alliance getOpposingAlliance() {
+		return opposingAlliance;
+	}
+	
+	public void setOpposingAlliance(Alliance opposingAlliance) {
+		this.opposingAlliance = opposingAlliance;
 	}
 	
 	public boolean getClimb() {

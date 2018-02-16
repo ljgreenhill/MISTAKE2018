@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class Scale {
 	
@@ -6,26 +7,26 @@ public class Scale {
 	int scaleCubes;
 	Main.Control state;
 	Main.Control tempState = state.neutral;
-	int startTime = 0;
-	int finalTime = 0;
+	int oldTime = 0;
+	//int finalTime = 0;
 	int count = 0;
+	
+	
+	
+	public Scale() {
+		oldTime = 0;
+	}
 
 	
 	
-/*	public Main.Control putCube(Robot scaleRobot, Main.Control state, Alliance myAlliance, Alliance opposingAlliance) {
+/*	public void putCube(Robot scaleRobot, Main.Control state, Alliance myAlliance, Alliance opposingAlliance, int myTime) {
 		Main.Control tempState = state;
-		startTime = Main.time;
+		
 		if(scaleRobot.getRobotAlliance(myAlliance, scaleRobot) == "red") {
 			redCube++;
 		}
 		else {
 			blueCube++;
-		}
-		if(scaleRobot.isTarget(opposingAlliance) == true) {
-			finalTime = (int) (startTime + scaleRobot.getScaleTimeDefense());
-		}
-		else {
-			finalTime = (int) (startTime + scaleRobot.getScaleTimeNeutral());
 		}
 		
 		if (blueCube < redCube) {
@@ -38,9 +39,11 @@ public class Scale {
 			state = state.neutral;
 		}
 		
-		return state;
+		//return state;
 		
-	}*/
+	} */
+	
+	
 	
 	/*public int getPutCubeTime(Robot scaleRobot, Main.Control state, Alliance myAlliance, Alliance opposingAlliance){
 		startTime = Main.time;
@@ -104,13 +107,13 @@ public class Scale {
 	
 	
 	//get number of cubes delivered in match
-	public int putCubeScale(Alliance myAlliance, Alliance opposingAlliance, Robot myRobot) {
+/*	public int putCubeScale(Alliance myAlliance, Alliance opposingAlliance, Robot myRobot) {
 		int scaleCubesMatch = 0;
 		if(myAlliance.whoScale().contains(myRobot)) {
 			scaleCubesMatch = (int) (myRobot.findMatchTime()/myRobot.getPlaceCubeTimeScale(myAlliance, opposingAlliance)); 
 		}
 		return scaleCubesMatch;
-	}
+	}*/
 		
 	
 	public Main.Control getControl() {
@@ -139,6 +142,58 @@ public class Scale {
 	  }
 		
 	  return state;
+	}
+	
+	public Main.Control updateState(){
+		if (blueCube < redCube) {
+			state = state.red;
+		}
+		else if (blueCube > redCube) {
+			state = state.blue;
+		}
+		else {
+			state = state.neutral;
+		}
+		
+		return state;
+	}
+	
+	public Main.Control getState(){
+		updateState(); // might change later
+		return state;
+	}
+	
+	public void putCube(Robot myRobot, int newTime, Score RedScore, Score BlueScore) {
+		Main.Control currentState = this.getState();
+		
+		int timeDifference = newTime-oldTime;
+		this.oldTime = newTime;
+		
+		if(myRobot.getMyAlliance().getAllianceColor().equals("red")) {
+			redCube++;
+		}
+		else {
+			blueCube++;
+		}
+		
+		
+		Main.Control newState = this.getState();
+		
+		if(currentState == state.neutral && newState == state.red) {
+			RedScore.updateScore(1);
+		}
+		if(currentState == state.neutral && newState == state.blue) {
+			BlueScore.updateScore(1);
+		}
+		if(currentState == state.red && newState == state.neutral) {
+			RedScore.updateScore(timeDifference);
+		}
+		if(currentState == state.blue && newState == state.neutral) {
+			BlueScore.updateScore(timeDifference);
+		}
+		
+		
+		
 	}
 	
 	
