@@ -28,6 +28,11 @@ public class FrontEnd extends JFrame {
 	JLabel B3;
 	JLabel blueScore;
 	JLabel redScore;
+	
+	JLabel BlueScore2;
+	JLabel RedScore2;
+	
+	
 	JCheckBox A1;
 	JCheckBox A2;
 	JCheckBox A3;
@@ -82,6 +87,11 @@ public class FrontEnd extends JFrame {
 		climb1 = new JLabel("Climb");
 		vault = new JLabel("Vault");
 		mistake = new JLabel("MISTAKE");
+		//String RedScore = ;
+		
+		RedScore2 = new JLabel();
+		BlueScore2 = new JLabel();
+		
 		R1 = new JLabel("R1");
 		R2 = new JLabel("R2");
 		R3 = new JLabel("R3");
@@ -109,7 +119,7 @@ public class FrontEnd extends JFrame {
 		D5 = new JCheckBox();
 		D6 = new JCheckBox();
 		
-		Integer[] defenseInts = { 1, 2, 3};
+		Integer[] defenseInts = { 0, 1, 2, 3};
 		JComboBox E1 = new JComboBox(defenseInts);
 		E1.setSelectedIndex(0);
 		
@@ -206,6 +216,19 @@ public class FrontEnd extends JFrame {
 		redScore.setBounds(1000, 550, 300, 50);
 		redScore.setFont(new Font(fontName, Font.BOLD, 30));
 		redScore.setForeground(Color.red);
+		
+		//number
+		BlueScore2.setBounds(125, 585, 300, 50);
+		BlueScore2.setFont(new Font(fontName, Font.BOLD, 30));
+		BlueScore2.setForeground(Color.blue);
+		BlueScore2.setText("0");
+		panel.add(BlueScore2);
+		
+		RedScore2.setBounds(1000, 585, 300, 50);
+		RedScore2.setFont(new Font(fontName, Font.BOLD, 30));
+		RedScore2.setForeground(Color.red);
+		RedScore2.setText("0");
+		panel.add(RedScore2);
 		
 		A1.setBounds(175, 120, 50, 50);
 		A1.setFont(new Font(fontName, Font.BOLD, 30));
@@ -681,6 +704,9 @@ public class FrontEnd extends JFrame {
 		panel.add(G5);
 		panel.add(G6); 
 		
+		//panel.add(RedScore);
+		//panel.add(BlueScore);
+		
 
 		
 
@@ -691,6 +717,18 @@ public class FrontEnd extends JFrame {
 		this.setVisible(true);
 		
 		
+
+	}
+	
+	public void setBlueScore(Score BlueScore) {
+		Score i = new Score(BlueScore);
+		BlueScore2.setText(i.toString());
+
+	}
+	
+	public void setRedScore(Score RedScore) {
+		Integer i = new Integer(RedScore);
+		RedScore2.setText(i.toString());
 
 	}
 
