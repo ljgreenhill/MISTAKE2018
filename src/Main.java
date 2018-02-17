@@ -14,7 +14,7 @@ public class Main {
 	
 	public static int time;
 	
-	static int score;
+	//static int score;
 	
 	public int getTime() {
 		return this.time;
@@ -40,9 +40,11 @@ public class Main {
 		  RedAlliance.allianceRobots.get(i).setOpposingAlliance(BlueAlliance);
 	  }
 	  
-	  FrontEnd myFrontEnd = new FrontEnd(BlueAlliance.getRobot1(), BlueAlliance.getRobot2(), BlueAlliance.getRobot2(), RedAlliance.getRobot1(), RedAlliance.getRobot2(), RedAlliance.getRobot3());
+	  
 	  Score RedScore = new Score("red");
 	  Score BlueScore = new Score("blue");
+	  FrontEnd myFrontEnd = new FrontEnd(BlueScore, RedScore, BlueAlliance.getRobot1(), BlueAlliance.getRobot2(), BlueAlliance.getRobot2(), RedAlliance.getRobot1(), RedAlliance.getRobot2(), RedAlliance.getRobot3());
+	  
 	  Field myField = new Field(new Scale(), new Vault("red"), new Vault("blue"), new Switch("red"), new Switch("blue") );
 	  
 	  ArrayList<Robot> scaleBots = new ArrayList<Robot> (); 

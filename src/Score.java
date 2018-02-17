@@ -1,18 +1,23 @@
 
 public class Score {
 	String color;
+	int count;
+	int score;
 	
 	
 	public Score(String c) {
 		this.color = "c";
 	}
 
-	int count;
-	int score;
+	
 	
 	public int updateScore(int myAmount) {
 		this.score += myAmount;
 		
+		return score;
+	}
+	
+	public int getScore() {
 		return score;
 	}
 	

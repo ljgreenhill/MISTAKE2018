@@ -9,7 +9,8 @@ public class FrontEnd extends JFrame {
 	
 	static final int autoBufferTime = 5000;
 	
-
+    Score RedScore3;
+    Score BlueScore3;
 	//ArrayList<JLabel> labelList;
 	JPanel panel;
 	JButton start;
@@ -74,7 +75,7 @@ public class FrontEnd extends JFrame {
 	
 	final String fontName = "comic sans ms"; 	
 
-	public FrontEnd(Robot RedRobot1, Robot RedRobot2, Robot RedRobot3, Robot BlueRobot1, Robot BlueRobot2, Robot BlueRobot3) {
+	public FrontEnd(Score RedScore, Score BlueScore, Robot RedRobot1, Robot RedRobot2, Robot RedRobot3, Robot BlueRobot1, Robot BlueRobot2, Robot BlueRobot3) {
 		
 
 		panel = new JPanel();
@@ -156,6 +157,15 @@ public class FrontEnd extends JFrame {
 		
 		start.setBounds(650, 600, 100, 50);
 		start.setFont(new Font(fontName, Font.BOLD, 25));
+		start.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				setRedScore();
+				setBlueScore();
+			}
+			
+		});
 		
 		allianceSwitch.setBounds(100, 50, 300, 100);
 		allianceSwitch.setFont(new Font(fontName, Font.BOLD, 25));
@@ -720,16 +730,16 @@ public class FrontEnd extends JFrame {
 
 	}
 	
-	public void setBlueScore(Score BlueScore) {
-		Score i = new Score(BlueScore);
-		BlueScore2.setText(i.toString());
 
+	
+	public void setRedScore() {
+		Integer i = new Integer(RedScore3.getScore());
+		RedScore2.setText(i.toString());
 	}
 	
-	public void setRedScore(Score RedScore) {
-		Integer i = new Integer(RedScore);
-		RedScore2.setText(i.toString());
-
+	public void setBlueScore() {
+		Integer i = new Integer(BlueScore3.getScore());
+		BlueScore2.setText(i.toString());
 	}
 
 	
