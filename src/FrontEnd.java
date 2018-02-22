@@ -81,6 +81,7 @@ public class FrontEnd extends JFrame {
        this.BlueScore3 = BlueScore;
 		panel = new JPanel();
 		
+		
 		start = new JButton("RUN");
 		allianceSwitch = new JLabel("Alliance Switch");
 		opponentSwitch = new JLabel("Opponent Switch");
