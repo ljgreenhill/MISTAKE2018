@@ -11,7 +11,7 @@ public class Robot {
 	double climbTime;
 	double vaultTimeDefense;
 	double vaultTimeNeutral;
-	private String mode;
+	String mode;
 	private boolean climb;
 	double MATCH_TIME;
 	int target;
@@ -23,6 +23,7 @@ public class Robot {
 		this.climb = false;
 		this.target = 0;
 		this.id = 0;
+		this.mode = "";
 	}
 	
 

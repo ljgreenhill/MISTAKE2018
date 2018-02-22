@@ -77,7 +77,8 @@ public class FrontEnd extends JFrame {
 
 	public FrontEnd(Score RedScore, Score BlueScore, Robot RedRobot1, Robot RedRobot2, Robot RedRobot3, Robot BlueRobot1, Robot BlueRobot2, Robot BlueRobot3) {
 		
-
+       this.RedScore3 = RedScore;
+       this.BlueScore3 = BlueScore;
 		panel = new JPanel();
 		
 		start = new JButton("RUN");
@@ -154,6 +155,7 @@ public class FrontEnd extends JFrame {
 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		panel.setLayout(null);
+		
 		
 		start.setBounds(650, 600, 100, 50);
 		start.setFont(new Font(fontName, Font.BOLD, 25));
@@ -733,15 +735,18 @@ public class FrontEnd extends JFrame {
 
 	
 	public void setRedScore() {
-		Integer i = new Integer(RedScore3.getScore());
-		RedScore2.setText(i.toString());
+		
+		Integer j = new Integer(RedScore3.getScore());
+		RedScore2.setText(j.toString());
 	}
 	
 	public void setBlueScore() {
-		Integer i = new Integer(BlueScore3.getScore());
-		BlueScore2.setText(i.toString());
+		
+		Integer j = new Integer(BlueScore3.getScore());
+		BlueScore2.setText(j.toString());
 	}
-
+	
+	
 	
 	}
 
