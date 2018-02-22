@@ -730,5 +730,10 @@ public class FrontEnd extends JFrame {
 		Integer j = new Integer(BlueScore3.getScore());
 		BlueScore2.setText(j.toString());
 	}
+	
+	public void refreshScores(Score RedScore, Score BlueScore){
+        this.RedScore3 = RedScore;
+        this.BlueScore3 = BlueScore;
+    }
 
 }

@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Main {
 
 	static double GAME_TIME = 135;
-
+	
 	public enum Side {
 		red, blue
 	}
@@ -21,7 +21,6 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
-
 		Alliance BlueAlliance = new Alliance("blue", new Robot(), new Robot(), new Robot());
 		Alliance RedAlliance = new Alliance("red", new Robot(), new Robot(), new Robot());
 
@@ -80,12 +79,13 @@ public class Main {
 				if (time != 0 && time % vaultBots.get(i).getPlaceCubeTimeScale(vaultBots.get(i).getMyAlliance(),
 						vaultBots.get(i).getOpposingAlliance()) == 0) {
 					myField.getMyVault(vaultBots.get(i)).putCube();
+					
 				}
 
 			}
 
 		}
-
-	}
+      myFrontEnd.refreshScores(RedScore, BlueScore);
+	}//end of main
 
 }
