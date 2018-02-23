@@ -23,8 +23,13 @@ public class Main {
 	public static void main(String[] args) {
 		//Alliance BlueAlliance = new Alliance("blue", new Robot(), new Robot(), new Robot());
 		//Alliance RedAlliance = new Alliance("red", new Robot(), new Robot(), new Robot());
+		
+		
+	    Alliance BlueAlliance = new Alliance("blue", new Robot(), new Robot(), new Robot());
+	  Alliance RedAlliance = new Alliance("red", new Robot(), new Robot(), new Robot());
+	  
 
-		for (int i = 0; i < Match.getBlueAlliance().allianceRobots.size(); i++) {
+		for (int i = 0; i < BlueAlliance.allianceRobots.size(); i++) {
 			BlueAlliance.allianceRobots.get(i).setMyAlliance(BlueAlliance);
 			BlueAlliance.allianceRobots.get(i).setOpposingAlliance(RedAlliance);
 		}
@@ -34,12 +39,12 @@ public class Main {
 			RedAlliance.allianceRobots.get(i).setOpposingAlliance(BlueAlliance);
 		}
 
-		//Score RedScore = new Score("red");
-		//Score BlueScore = new Score("blue");
+		Score RedScore = new Score("red");
+		Score BlueScore = new Score("blue");
 		FrontEnd myFrontEnd = new FrontEnd(BlueScore, RedScore, BlueAlliance.getRobot1(), BlueAlliance.getRobot2(),
 				BlueAlliance.getRobot2(), RedAlliance.getRobot1(), RedAlliance.getRobot2(), RedAlliance.getRobot3());
 
-		//Field myField = new Field(new Scale(), new Vault("red"), new Vault("blue"), new Switch("red"),
+		Field myField = new Field(new Scale(), new Vault("red"), new Vault("blue"), new Switch("red"),
 				new Switch("blue"));
 
 		ArrayList<Robot> scaleBots = new ArrayList<Robot>();
