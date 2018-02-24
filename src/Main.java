@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Main {
 
 	static double GAME_TIME = 135;
-	
+
 	public enum Side {
 		red, blue
 	}
@@ -14,20 +14,18 @@ public class Main {
 
 	public static int time;
 
-	// static int score;
-
 	public int getTime() {
 		return this.time;
 	}
 
 	public static void main(String[] args) {
-		//Alliance BlueAlliance = new Alliance("blue", new Robot(), new Robot(), new Robot());
-		//Alliance RedAlliance = new Alliance("red", new Robot(), new Robot(), new Robot());
-		
-		
-	    Alliance BlueAlliance = new Alliance("blue", new Robot(), new Robot(), new Robot());
-	  Alliance RedAlliance = new Alliance("red", new Robot(), new Robot(), new Robot());
-	  
+		// Alliance BlueAlliance = new Alliance("blue", new Robot(), new Robot(), new
+		// Robot());
+		// Alliance RedAlliance = new Alliance("red", new Robot(), new Robot(), new
+		// Robot());
+
+		Alliance BlueAlliance = new Alliance("blue", new Robot(), new Robot(), new Robot());
+		Alliance RedAlliance = new Alliance("red", new Robot(), new Robot(), new Robot());
 
 		for (int i = 0; i < BlueAlliance.allianceRobots.size(); i++) {
 			BlueAlliance.allianceRobots.get(i).setMyAlliance(BlueAlliance);
@@ -47,54 +45,61 @@ public class Main {
 		Field myField = new Field(new Scale(), new Vault("red"), new Vault("blue"), new Switch("red"),
 				new Switch("blue"));
 
+		Match myMatch = new Match(
+				new Field(new Scale(), new Vault("red"), new Vault("blue"), new Switch("red"), new Switch("blue")),
+				new Alliance("red", new Robot(), new Robot(), new Robot()),
+				new Alliance("blue", new Robot(), new Robot(), new Robot()), new Score("red"), new Score("blue"));
+
 		ArrayList<Robot> scaleBots = new ArrayList<Robot>();
-		scaleBots.addAll(BlueAlliance.whoScale());
-		scaleBots.addAll(RedAlliance.whoScale());
+		scaleBots.addAll(myMatch.getBlueAlliance().whoScale());
+		scaleBots.addAll(myMatch.getRedAlliance().whoScale());
 
 		ArrayList<Robot> allianceSwitchBots = new ArrayList<Robot>();
-		allianceSwitchBots.addAll(BlueAlliance.whoAllianceSwitch());
-		allianceSwitchBots.addAll(RedAlliance.whoAllianceSwitch());
+		allianceSwitchBots.addAll(myMatch.getBlueAlliance().whoAllianceSwitch());
+		allianceSwitchBots.addAll(myMatch.getRedAlliance().whoAllianceSwitch());
 
 		ArrayList<Robot> opponentSwitchBots = new ArrayList<Robot>();
-		opponentSwitchBots.addAll(BlueAlliance.whoOpponentSwitch());
-		opponentSwitchBots.addAll(RedAlliance.whoOpponentSwitch());
+		opponentSwitchBots.addAll(myMatch.getBlueAlliance().whoOpponentSwitch());
+		opponentSwitchBots.addAll(myMatch.getRedAlliance().whoOpponentSwitch());
 
 		ArrayList<Robot> vaultBots = new ArrayList<Robot>();
-		vaultBots.addAll(BlueAlliance.whoVault());
-		vaultBots.addAll(RedAlliance.whoVault());
+		vaultBots.addAll(myMatch.getBlueAlliance().whoVault());
+		vaultBots.addAll(myMatch.getRedAlliance().whoVault());
 
 		for (time = 1; time <= 135; time++) {
 			for (int i = 0; i < scaleBots.size(); i++) {
 				if (time != 0 && time % scaleBots.get(i).getPlaceCubeTimeScale(scaleBots.get(i).getMyAlliance(),
 						scaleBots.get(i).getOpposingAlliance()) == 0) {
-					myField.getScale().putCube(scaleBots.get(i), time, RedScore, BlueScore);
-					
+					myMatch.getField().getScale().putCube(scaleBots.get(i), time, myMatch.getRedScore(),
+							myMatch.getBlueScore());
+
 				}
 				if (time != 0 && time % allianceSwitchBots.get(i).getPlaceCubeTimeSwitchAlliance(
 						allianceSwitchBots.get(i).getMyAlliance(),
 						allianceSwitchBots.get(i).getOpposingAlliance()) == 0) {
-					myField.getAllianceSwitch(allianceSwitchBots.get(i)).putCube(allianceSwitchBots.get(i), time,
-							RedScore, BlueScore);
-					
+					myMatch.getField().getAllianceSwitch(allianceSwitchBots.get(i)).putCube(allianceSwitchBots.get(i),
+							time, myMatch.getRedScore(), myMatch.getBlueScore());
+
 				}
 				if (time != 0 && time % opponentSwitchBots.get(i).getPlaceCubeTimeSwitchOpponent(
 						opponentSwitchBots.get(i).getMyAlliance(),
 						opponentSwitchBots.get(i).getOpposingAlliance()) == 0) {
-					myField.getOpponentSwitch(opponentSwitchBots.get(i)).putCube(opponentSwitchBots.get(i), time,
-							RedScore, BlueScore);
-					
+					myMatch.getField().getOpponentSwitch(opponentSwitchBots.get(i)).putCube(opponentSwitchBots.get(i),
+							time, myMatch.getRedScore(), myMatch.getBlueScore());
+
 				}
 				if (time != 0 && time % vaultBots.get(i).getPlaceCubeTimeScale(vaultBots.get(i).getMyAlliance(),
 						vaultBots.get(i).getOpposingAlliance()) == 0) {
-					myField.getMyVault(vaultBots.get(i)).putCube();
-					
-					
+					myMatch.getField().getMyVault(vaultBots.get(i)).putCube();
+
 				}
 
 			}
 
 		}
-      myFrontEnd.refreshScores(RedScore, BlueScore);
-	}//end of main
+		myFrontEnd.refreshScores(myMatch.getRedScore(), myMatch.getBlueScore());
+		// System.out.print(RedScore);
+		// System.out.print(BlueScore);
+	}// end of main
 
 }

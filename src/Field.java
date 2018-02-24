@@ -6,7 +6,7 @@ public class Field {
 	Switch RedSwitch;
 	Switch BlueSwitch;
 
-	Field(Scale myScale, Vault RVault, Vault BVault, Switch RSwitch, Switch BSwitch) {
+	public Field(Scale myScale, Vault RVault, Vault BVault, Switch RSwitch, Switch BSwitch) {
 		this.scale = myScale;
 		this.RedVault = RVault;
 		this.BlueVault = BVault;

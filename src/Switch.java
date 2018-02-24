@@ -9,7 +9,7 @@ public class Switch {
 	Main.Control tempState = state.neutral;
 	int oldTime = 0;
 
-	Switch(String c) {
+	public Switch(String c) {
 		this.color = c;
 		oldTime = 0;
 	}
