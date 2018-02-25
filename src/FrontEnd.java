@@ -9,8 +9,8 @@ public class FrontEnd extends JFrame {
 
 	static final int autoBufferTime = 5000;
 
-	Score RedScore3;
-	Score BlueScore3;
+	int RedScore3;
+	int BlueScore3;
 	// ArrayList<JLabel> labelList;
 	JPanel panel;
 	JButton start;
@@ -76,8 +76,8 @@ public class FrontEnd extends JFrame {
 	public FrontEnd(Score RedScore, Score BlueScore, Robot RedRobot1, Robot RedRobot2, Robot RedRobot3,
 			Robot BlueRobot1, Robot BlueRobot2, Robot BlueRobot3) {
 
-		this.RedScore3 = RedScore;
-		this.BlueScore3 = BlueScore;
+		this.RedScore3 = RedScore.getScore();
+		this.BlueScore3 = BlueScore.getScore();
 		panel = new JPanel();
 
 		start = new JButton("RUN");
@@ -721,19 +721,19 @@ public class FrontEnd extends JFrame {
 
 	public void setRedScore() {
 
-		Integer j = new Integer(RedScore3.getScore());
+		Integer j = new Integer(RedScore3);
 		RedScore2.setText(j.toString());
 	}
 
 	public void setBlueScore() {
 
-		Integer j = new Integer(BlueScore3.getScore());
+		Integer j = new Integer(BlueScore3);
 		BlueScore2.setText(j.toString());
 	}
 
 	public void refreshScores(Score RedScore, Score BlueScore) {
-		this.RedScore3 = RedScore;
-		this.BlueScore3 = BlueScore;
+		this.RedScore3 = RedScore.getScore();
+		this.BlueScore3 = BlueScore.getScore();
 	}
 
 }

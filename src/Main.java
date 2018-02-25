@@ -98,8 +98,8 @@ public class Main {
 
 		}
 		myFrontEnd.refreshScores(myMatch.getRedScore(), myMatch.getBlueScore());
-		// System.out.print(RedScore);
-		// System.out.print(BlueScore);
+		System.out.print(RedScore.getScore());
+		System.out.print(BlueScore.getScore());
 	}// end of main
 
 }
