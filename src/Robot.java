@@ -178,13 +178,17 @@ public class Robot {
 		return result;
 	}
 
-	public String getRobotAlliance(Alliance myAlliance, Alliance opponentAlliance) {
+	/*public String getRobotAlliance(Alliance myAlliance, Alliance opponentAlliance) {
 		if (myAlliance.allianceRobots.contains(this)) {
 			return myAlliance.getAllianceColor();
 		} else {
 			return opponentAlliance.getAllianceColor();
 		}
-	}
+	}*/
+	
+	public String getRobotAlliance(){
+      return this.myAlliance.getAllianceColor();
+    }
 
 	public int getPlaceCubeTimeScale(Alliance myAlliance, Alliance opposingAlliance) {
 		int startTime = 0;
