@@ -66,6 +66,10 @@ public class Main {
 		vaultBots.addAll(myMatch.getBlueAlliance().whoVault());
 		vaultBots.addAll(myMatch.getRedAlliance().whoVault());
 
+		ArrayList<Robot> climbBots = new ArrayList<Robot>();
+		climbBots.addAll(myMatch.getBlueAlliance().whoClimb());
+		climbBots.addAll(myMatch.getRedAlliance().whoClimb());
+
 		for (time = 1; time <= 135; time++) {
 			for (int i = 0; i < scaleBots.size(); i++) {
 				if (time != 0 && time % scaleBots.get(i).getPlaceCubeTimeScale(scaleBots.get(i).getMyAlliance(),
@@ -74,6 +78,8 @@ public class Main {
 							myMatch.getBlueScore());
 
 				}
+			}
+			for (int i = 0; i < allianceSwitchBots.size(); i++) {
 				if (time != 0 && time % allianceSwitchBots.get(i).getPlaceCubeTimeSwitchAlliance(
 						allianceSwitchBots.get(i).getMyAlliance(),
 						allianceSwitchBots.get(i).getOpposingAlliance()) == 0) {
@@ -81,6 +87,8 @@ public class Main {
 							time, myMatch.getRedScore(), myMatch.getBlueScore());
 
 				}
+			}
+			for (int i = 0; i < opponentSwitchBots.size(); i++) {
 				if (time != 0 && time % opponentSwitchBots.get(i).getPlaceCubeTimeSwitchOpponent(
 						opponentSwitchBots.get(i).getMyAlliance(),
 						opponentSwitchBots.get(i).getOpposingAlliance()) == 0) {
@@ -88,14 +96,25 @@ public class Main {
 							time, myMatch.getRedScore(), myMatch.getBlueScore());
 
 				}
+			}
+			for (int i = 0; i < vaultBots.size(); i++) {
 				if (time != 0 && time % vaultBots.get(i).getPlaceCubeTimeScale(vaultBots.get(i).getMyAlliance(),
 						vaultBots.get(i).getOpposingAlliance()) == 0) {
-					myMatch.getField().getMyVault(vaultBots.get(i)).putCube();
+					myMatch.getField().getMyVault(vaultBots.get(i)).putCube(vaultBots.get(i), myMatch.getRedScore(),
+							myMatch.getBlueScore());
 
 				}
-
 			}
+			for (int i = 0; i < climbBots.size(); i++) {
+				if (time != 0 && time % climbBots.get(i).getClimbTime() == 0) {
+					if (climbBots.get(i).getMyAlliance().getAllianceColor() == "red") {
+						myMatch.getRedScore().updateScore(30);
+					} else {
+						myMatch.getBlueScore().updateScore(30);
+					}
 
+				}
+			}
 		}
 		myFrontEnd.refreshScores(myMatch.getRedScore(), myMatch.getBlueScore());
 		System.out.print(RedScore.getScore());

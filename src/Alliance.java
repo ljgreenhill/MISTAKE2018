@@ -32,6 +32,18 @@ public class Alliance {
 
 		return climbNumber;
 	}
+	
+	public ArrayList<Robot> whoClimb() {
+		ArrayList<Robot> climbBots = new ArrayList<Robot>();
+
+		for (int i = 0; i < allianceRobots.size(); i++) {
+			if (allianceRobots.get(i).getClimb() == true) {
+				climbBots.add(allianceRobots.get(i));
+			}
+		}
+		return climbBots;
+
+	}
 
 	public ArrayList<Robot> whoScale() {
 		ArrayList<Robot> scaleBots = new ArrayList<Robot>();

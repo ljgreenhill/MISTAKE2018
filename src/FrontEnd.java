@@ -161,6 +161,7 @@ public class FrontEnd extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				refreshScores(RedScore, BlueScore);
 				setRedScore();
 				setBlueScore();
 			}

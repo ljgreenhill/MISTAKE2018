@@ -9,9 +9,16 @@ public class Vault {
 
 	}
 
-	public int putCube() {
+	public int putCube(Robot myRobot, Score RedScore, Score BlueScore) {
 		vaultCubes++;
-		return vaultCubes;
+		
+		
+		if (myRobot.getMyAlliance().getAllianceColor().equals("red")) {
+			RedScore.updateScore(5);
+		} else {
+			BlueScore.updateScore(5);
+		}
+	  return vaultCubes;
 	}
 
 }
