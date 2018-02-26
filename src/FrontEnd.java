@@ -249,6 +249,7 @@ public class FrontEnd extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				RedRobot1.setMode("allianceSwitch");
+				
 			}
 
 		});

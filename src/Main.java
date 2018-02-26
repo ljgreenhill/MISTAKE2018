@@ -49,7 +49,21 @@ public class Main {
 				new Field(new Scale(), new Vault("red"), new Vault("blue"), new Switch("red"), new Switch("blue")),
 				new Alliance("red", new Robot(), new Robot(), new Robot()),
 				new Alliance("blue", new Robot(), new Robot(), new Robot()), new Score("red"), new Score("blue"));
-
+		
+		myMatch.getBlueAlliance().getRobot1().setClimbTime(10.0); //TODO temporary
+		myMatch.getBlueAlliance().getRobot2().setClimbTime(10.0);
+		myMatch.getBlueAlliance().getRobot3().setClimbTime(10.0);
+		myMatch.getRedAlliance().getRobot1().setClimbTime(10.0);
+		myMatch.getRedAlliance().getRobot2().setClimbTime(10.0);
+		myMatch.getRedAlliance().getRobot3().setClimbTime(10.0);
+		
+		myMatch.getRedAlliance().getRobot1().setScaleTimeNeutral(10.0);
+		myMatch.getRedAlliance().getRobot2().setScaleTimeNeutral(10.0);
+		myMatch.getRedAlliance().getRobot3().setScaleTimeNeutral(10.0);
+		myMatch.getBlueAlliance().getRobot1().setScaleTimeNeutral(10.0);
+		myMatch.getBlueAlliance().getRobot1().setScaleTimeNeutral(10.0);
+		myMatch.getBlueAlliance().getRobot1().setScaleTimeNeutral(1.0);
+		
 		ArrayList<Robot> scaleBots = new ArrayList<Robot>();
 		scaleBots.addAll(myMatch.getBlueAlliance().whoScale());
 		scaleBots.addAll(myMatch.getRedAlliance().whoScale());
