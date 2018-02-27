@@ -24,32 +24,29 @@ public class Main {
 		// Alliance RedAlliance = new Alliance("red", new Robot(), new Robot(), new
 		// Robot());
 
-		Alliance BlueAlliance = new Alliance("blue", new Robot(), new Robot(), new Robot());
-		Alliance RedAlliance = new Alliance("red", new Robot(), new Robot(), new Robot());
+		//Alliance BlueAlliance = new Alliance("blue", new Robot(), new Robot(), new Robot());
+		//Alliance RedAlliance = new Alliance("red", new Robot(), new Robot(), new Robot());
 
-		for (int i = 0; i < BlueAlliance.allianceRobots.size(); i++) {
-			BlueAlliance.allianceRobots.get(i).setMyAlliance(BlueAlliance);
-			BlueAlliance.allianceRobots.get(i).setOpposingAlliance(RedAlliance);
-		}
-
-		for (int i = 0; i < RedAlliance.allianceRobots.size(); i++) {
-			RedAlliance.allianceRobots.get(i).setMyAlliance(RedAlliance);
-			RedAlliance.allianceRobots.get(i).setOpposingAlliance(BlueAlliance);
-		}
-
-		
-		
-
-		Field myField = new Field(new Scale(), new Vault("red"), new Vault("blue"), new Switch("red"),
-				new Switch("blue"));
+		//Field myField = new Field(new Scale(), new Vault("red"), new Vault("blue"), new Switch("red"),
+		//		new Switch("blue"));
 
 		Match myMatch = new Match(
 				new Field(new Scale(), new Vault("red"), new Vault("blue"), new Switch("red"), new Switch("blue")),
 				new Alliance("red", new Robot(), new Robot(), new Robot()),
 				new Alliance("blue", new Robot(), new Robot(), new Robot()), new Score("red"), new Score("blue"));
 		
-		FrontEnd myFrontEnd = new FrontEnd(myMatch.getBlueScore(), myMatch.getRedScore(), BlueAlliance.getRobot1(), BlueAlliance.getRobot2(),
-				BlueAlliance.getRobot2(), RedAlliance.getRobot1(), RedAlliance.getRobot2(), RedAlliance.getRobot3());
+		FrontEnd myFrontEnd = new FrontEnd(myMatch.getBlueScore(), myMatch.getRedScore(), myMatch.getBlueAlliance().getRobot1(), myMatch.getBlueAlliance().getRobot2(),
+				myMatch.getBlueAlliance().getRobot2(), myMatch.getRedAlliance().getRobot1(), myMatch.getRedAlliance().getRobot2(), myMatch.getRedAlliance().getRobot3());
+		
+		for (int i = 0; i < myMatch.getBlueAlliance().allianceRobots.size(); i++) {
+			myMatch.getBlueAlliance().allianceRobots.get(i).setMyAlliance(myMatch.getBlueAlliance());
+			myMatch.getBlueAlliance().allianceRobots.get(i).setOpposingAlliance(myMatch.getRedAlliance());
+		}
+
+		for (int i = 0; i < myMatch.getRedAlliance().allianceRobots.size(); i++) {
+			myMatch.getRedAlliance().allianceRobots.get(i).setMyAlliance(myMatch.getRedAlliance());
+			myMatch.getRedAlliance().allianceRobots.get(i).setOpposingAlliance(myMatch.getBlueAlliance());
+		}
 		
 		myMatch.getBlueAlliance().getRobot1().setClimbTime(10.0); //TODO temporary
 		myMatch.getBlueAlliance().getRobot2().setClimbTime(10.0);
