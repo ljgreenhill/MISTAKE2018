@@ -37,10 +37,8 @@ public class Main {
 			RedAlliance.allianceRobots.get(i).setOpposingAlliance(BlueAlliance);
 		}
 
-		Score RedScore = new Score("red");
-		Score BlueScore = new Score("blue");
-		FrontEnd myFrontEnd = new FrontEnd(BlueScore, RedScore, BlueAlliance.getRobot1(), BlueAlliance.getRobot2(),
-				BlueAlliance.getRobot2(), RedAlliance.getRobot1(), RedAlliance.getRobot2(), RedAlliance.getRobot3());
+		
+		
 
 		Field myField = new Field(new Scale(), new Vault("red"), new Vault("blue"), new Switch("red"),
 				new Switch("blue"));
@@ -49,6 +47,9 @@ public class Main {
 				new Field(new Scale(), new Vault("red"), new Vault("blue"), new Switch("red"), new Switch("blue")),
 				new Alliance("red", new Robot(), new Robot(), new Robot()),
 				new Alliance("blue", new Robot(), new Robot(), new Robot()), new Score("red"), new Score("blue"));
+		
+		FrontEnd myFrontEnd = new FrontEnd(myMatch.getBlueScore(), myMatch.getRedScore(), BlueAlliance.getRobot1(), BlueAlliance.getRobot2(),
+				BlueAlliance.getRobot2(), RedAlliance.getRobot1(), RedAlliance.getRobot2(), RedAlliance.getRobot3());
 		
 		myMatch.getBlueAlliance().getRobot1().setClimbTime(10.0); //TODO temporary
 		myMatch.getBlueAlliance().getRobot2().setClimbTime(10.0);
@@ -133,8 +134,8 @@ public class Main {
 			}
 		}
 		myFrontEnd.refreshScores(myMatch.getRedScore(), myMatch.getBlueScore());
-		System.out.print(RedScore.getScore());
-		System.out.print(BlueScore.getScore());
+		System.out.print(myMatch.getRedScore().getScore());
+		System.out.print(myMatch.getBlueScore().getScore());
 	}// end of main
 
 }
