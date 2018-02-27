@@ -3,7 +3,7 @@ public class Score {
 	String color;
 	int count;
 	int score;
-	int testScore;
+	//int testScore;
 
 	public Score(String c) {
 		this.color = "c";
@@ -15,9 +15,9 @@ public class Score {
 		return score;
 	}
 
-	public void setScore(int myScore) {
-		this.testScore = myScore;
-	}
+	//public void setScore(int myScore) {
+	//	this.testScore = myScore;
+	//}
 	
 	public int getScore() {
 		return score;
