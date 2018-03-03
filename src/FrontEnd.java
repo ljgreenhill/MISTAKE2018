@@ -165,9 +165,7 @@ public class FrontEnd extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				refreshScores(RedScore, BlueScore);
-				setRedScore();
-				setBlueScore();
+				
 				
 				for (int i = 0; i < BlueAlliance.allianceRobots.size(); i++) {
 					BlueAlliance.allianceRobots.get(i).setMyAlliance(BlueAlliance);
@@ -236,7 +234,7 @@ public class FrontEnd extends JFrame {
 						}
 					}
 					for (int i = 0; i < climbBots.size(); i++) {
-						if (time != 0 && time % climbBots.get(i).getClimbTime() == 0) {
+						if (time != 0 && time % climbBots.get(i).findMatchTime() == 0) {
 							if (climbBots.get(i).getMyAlliance().getAllianceColor() == "red") {
 								RedScore.updateScore(30);
 							} else {
@@ -247,6 +245,9 @@ public class FrontEnd extends JFrame {
 					}
 
 			}
+				refreshScores(RedScore, BlueScore);
+				setRedScore();
+				setBlueScore();
 		  }
 
 		});
