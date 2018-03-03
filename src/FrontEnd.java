@@ -77,8 +77,8 @@ public class FrontEnd extends JFrame {
 
 	final String fontName = "comic sans ms";
 
-	public FrontEnd(Field Field, Alliance BlueAlliance, Alliance RedAlliance, Score BlueScore, Score RedScore, Robot RedRobot1, Robot RedRobot2, Robot RedRobot3,
-			Robot BlueRobot1, Robot BlueRobot2, Robot BlueRobot3) {
+	public FrontEnd(Field Field, Alliance BlueAlliance, Alliance RedAlliance, Score BlueScore, Score RedScore, Robot BlueRobot1, Robot BlueRobot2, Robot BlueRobot3,
+			Robot RedRobot1, Robot RedRobot2, Robot RedRobot3) {
 
 		this.RedScore3 = RedScore;
 		this.BlueScore3 = BlueScore;
@@ -166,6 +166,7 @@ public class FrontEnd extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
+				//RedScore.updateScore(20);
 				
 				for (int i = 0; i < BlueAlliance.allianceRobots.size(); i++) {
 					BlueAlliance.allianceRobots.get(i).setMyAlliance(BlueAlliance);
