@@ -45,6 +45,29 @@ public class Robot {
 	public Alliance getOpposingAlliance() {
 		return opposingAlliance;
 	}
+	
+	/*public Alliance getOpposingAlliance(Alliance myAlliance, Alliance BlueAlliance, Alliance RedAlliance) {
+		Alliance opposingAlliance;
+		if (myAlliance.getAllianceColor() == "red") {
+			opposingAlliance = BlueAlliance;
+		} else {
+			opposingAlliance = RedAlliance;
+		}
+
+		return opposingAlliance;
+	}
+	
+	public Alliance getMyAlliance(Alliance myAlliance, Alliance BlueAlliance, Alliance RedAlliance) {
+		Alliance myAlliance;
+		if (myAlliance.getAllianceColor() == "red") {
+			opposingAlliance = BlueAlliance;
+		} else {
+			opposingAlliance = RedAlliance;
+		}
+
+		return opposingAlliance;
+	}*/
+
 
 	public void setOpposingAlliance(Alliance opposingAlliance) {
 		this.opposingAlliance = opposingAlliance;

@@ -77,7 +77,7 @@ public class FrontEnd extends JFrame {
 
 	final String fontName = "comic sans ms";
 
-	public FrontEnd(Field Field, Alliance BlueAlliance, Alliance RedAlliance, Score RedScore, Score BlueScore, Robot RedRobot1, Robot RedRobot2, Robot RedRobot3,
+	public FrontEnd(Field Field, Alliance BlueAlliance, Alliance RedAlliance, Score BlueScore, Score RedScore, Robot RedRobot1, Robot RedRobot2, Robot RedRobot3,
 			Robot BlueRobot1, Robot BlueRobot2, Robot BlueRobot3) {
 
 		this.RedScore3 = RedScore;
@@ -226,9 +226,9 @@ public class FrontEnd extends JFrame {
 						}
 					}
 					for (int i = 0; i < vaultBots.size(); i++) {
-						if (time != 0 && time % vaultBots.get(i).getPlaceCubeTimeScale(vaultBots.get(i).getMyAlliance(),
+						if (time != 0 && time % vaultBots.get(i).getPlaceCubeTimeVault(vaultBots.get(i).getMyAlliance(),
 								vaultBots.get(i).getOpposingAlliance()) == 0) {
-							Field.getMyVault(vaultBots.get(i)).putCube(vaultBots.get(i), RedScore,
+							Field.getMyVault(vaultBots.get(i)).putCubeVault(vaultBots.get(i), RedScore,
 									BlueScore);
 
 						}

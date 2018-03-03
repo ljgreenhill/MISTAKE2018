@@ -60,6 +60,16 @@ public class Main {
 		myMatch.getBlueAlliance().getRobot1().setScaleTimeNeutral(10.0);
 		myMatch.getBlueAlliance().getRobot1().setScaleTimeNeutral(1.0);
 		
+		myMatch.getRedAlliance().getRobot1().setVaultTimeNeutral(10.0);
+		myMatch.getRedAlliance().getRobot2().setVaultTimeNeutral(10.0);
+		myMatch.getRedAlliance().getRobot3().setVaultTimeNeutral(10.0);
+		myMatch.getBlueAlliance().getRobot1().setVaultTimeNeutral(10.0);
+		myMatch.getBlueAlliance().getRobot1().setVaultTimeNeutral(10.0);
+		myMatch.getBlueAlliance().getRobot1().setVaultTimeNeutral(1.0);
+		
+		
+		//System.out.print(myMatch.getRedScore().getScore());
+		
 		//myMatch.getBlueScore().updateScore(333);
 		
 	/*	ArrayList<Robot> scaleBots = new ArrayList<Robot>();

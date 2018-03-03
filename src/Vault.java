@@ -9,7 +9,7 @@ public class Vault {
 
 	}
 
-	public int putCube(Robot myRobot, Score RedScore, Score BlueScore) {
+	public int putCubeVault(Robot myRobot, Score RedScore, Score BlueScore) {
 		vaultCubes++;
 		
 		
