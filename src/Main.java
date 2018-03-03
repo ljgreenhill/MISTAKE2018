@@ -12,11 +12,7 @@ public class Main {
 		neutral, red, blue
 	}
 
-	public static int time;
-
-	public int getTime() {
-		return this.time;
-	}
+	
 
 	public static void main(String[] args) {
 		// Alliance BlueAlliance = new Alliance("blue", new Robot(), new Robot(), new
@@ -35,10 +31,12 @@ public class Main {
 				new Alliance("red", new Robot(), new Robot(), new Robot()),
 				new Alliance("blue", new Robot(), new Robot(), new Robot()), new Score("red"), new Score("blue"));
 		
-		FrontEnd myFrontEnd = new FrontEnd(myMatch.getBlueScore(), myMatch.getRedScore(), myMatch.getBlueAlliance().getRobot1(), myMatch.getBlueAlliance().getRobot2(),
+		FrontEnd myFrontEnd = new FrontEnd(myMatch.getField(), myMatch.getBlueAlliance(), myMatch.getRedAlliance(), myMatch.getBlueScore(), myMatch.getRedScore(), myMatch.getBlueAlliance().getRobot1(), myMatch.getBlueAlliance().getRobot2(),
 				myMatch.getBlueAlliance().getRobot2(), myMatch.getRedAlliance().getRobot1(), myMatch.getRedAlliance().getRobot2(), myMatch.getRedAlliance().getRobot3());
 		
-		for (int i = 0; i < myMatch.getBlueAlliance().allianceRobots.size(); i++) {
+		//Scale myScale = new Scale(myMatch.getBlueScore(), myMatch,getRedScore(), )
+		
+		/*for (int i = 0; i < myMatch.getBlueAlliance().allianceRobots.size(); i++) {
 			myMatch.getBlueAlliance().allianceRobots.get(i).setMyAlliance(myMatch.getBlueAlliance());
 			myMatch.getBlueAlliance().allianceRobots.get(i).setOpposingAlliance(myMatch.getRedAlliance());
 		}
@@ -46,7 +44,7 @@ public class Main {
 		for (int i = 0; i < myMatch.getRedAlliance().allianceRobots.size(); i++) {
 			myMatch.getRedAlliance().allianceRobots.get(i).setMyAlliance(myMatch.getRedAlliance());
 			myMatch.getRedAlliance().allianceRobots.get(i).setOpposingAlliance(myMatch.getBlueAlliance());
-		}
+		}*/
 		
 		myMatch.getBlueAlliance().getRobot1().setClimbTime(10.0); //TODO temporary
 		myMatch.getBlueAlliance().getRobot2().setClimbTime(10.0);
@@ -64,7 +62,7 @@ public class Main {
 		
 		//myMatch.getBlueScore().updateScore(333);
 		
-		ArrayList<Robot> scaleBots = new ArrayList<Robot>();
+	/*	ArrayList<Robot> scaleBots = new ArrayList<Robot>();
 		scaleBots.addAll(myMatch.getBlueAlliance().whoScale());
 		scaleBots.addAll(myMatch.getRedAlliance().whoScale());
 
@@ -82,9 +80,9 @@ public class Main {
 
 		ArrayList<Robot> climbBots = new ArrayList<Robot>();
 		climbBots.addAll(myMatch.getBlueAlliance().whoClimb());
-		climbBots.addAll(myMatch.getRedAlliance().whoClimb());
+		climbBots.addAll(myMatch.getRedAlliance().whoClimb());*/
 
-		for (time = 1; time <= 135; time++) {
+		/*for (time = 1; time <= 135; time++) {
 			for (int i = 0; i < scaleBots.size(); i++) {
 				if (time != 0 && time % scaleBots.get(i).getPlaceCubeTimeScale(scaleBots.get(i).getMyAlliance(),
 						scaleBots.get(i).getOpposingAlliance()) == 0) {
@@ -128,11 +126,11 @@ public class Main {
 					}
 
 				}
-			}
+			}*/
 		}
-		myFrontEnd.refreshScores(myMatch.getRedScore(), myMatch.getBlueScore());
-		System.out.print(myMatch.getRedScore().getScore());
-		System.out.print(myMatch.getBlueScore().getScore());
+	//	myFrontEnd.refreshScores(myMatch.getRedScore(), myMatch.getBlueScore());
+	//	System.out.print(myMatch.getRedScore().getScore());
+	//	System.out.print(myMatch.getBlueScore().getScore());
 	}// end of main
 
-}
+

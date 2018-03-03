@@ -8,7 +8,11 @@ import javax.swing.*;
 public class FrontEnd extends JFrame {
 
 	static final int autoBufferTime = 5000;
+	public static int time;
 
+	public int getTime() {
+		return this.time;
+	}
 	Score RedScore3;
 	Score BlueScore3;
 	// ArrayList<JLabel> labelList;
@@ -73,7 +77,7 @@ public class FrontEnd extends JFrame {
 
 	final String fontName = "comic sans ms";
 
-	public FrontEnd(Score RedScore, Score BlueScore, Robot RedRobot1, Robot RedRobot2, Robot RedRobot3,
+	public FrontEnd(Field Field, Alliance BlueAlliance, Alliance RedAlliance, Score RedScore, Score BlueScore, Robot RedRobot1, Robot RedRobot2, Robot RedRobot3,
 			Robot BlueRobot1, Robot BlueRobot2, Robot BlueRobot3) {
 
 		this.RedScore3 = RedScore;
@@ -164,7 +168,86 @@ public class FrontEnd extends JFrame {
 				refreshScores(RedScore, BlueScore);
 				setRedScore();
 				setBlueScore();
+				
+				for (int i = 0; i < BlueAlliance.allianceRobots.size(); i++) {
+					BlueAlliance.allianceRobots.get(i).setMyAlliance(BlueAlliance);
+					BlueAlliance.allianceRobots.get(i).setOpposingAlliance(RedAlliance);
+				}
+
+				for (int i = 0; i < RedAlliance.allianceRobots.size(); i++) {
+					RedAlliance.allianceRobots.get(i).setMyAlliance(RedAlliance);
+					RedAlliance.allianceRobots.get(i).setOpposingAlliance(BlueAlliance);
+				}
+				
+
+				ArrayList<Robot> scaleBots = new ArrayList<Robot>();
+				scaleBots.addAll(BlueAlliance.whoScale());
+				scaleBots.addAll(RedAlliance.whoScale());
+
+				ArrayList<Robot> allianceSwitchBots = new ArrayList<Robot>();
+				allianceSwitchBots.addAll(BlueAlliance.whoAllianceSwitch());
+				allianceSwitchBots.addAll(RedAlliance.whoAllianceSwitch());
+
+				ArrayList<Robot> opponentSwitchBots = new ArrayList<Robot>();
+				opponentSwitchBots.addAll(BlueAlliance.whoOpponentSwitch());
+				opponentSwitchBots.addAll(RedAlliance.whoOpponentSwitch());
+
+				ArrayList<Robot> vaultBots = new ArrayList<Robot>();
+				vaultBots.addAll(BlueAlliance.whoVault());
+				vaultBots.addAll(RedAlliance.whoVault());
+
+				ArrayList<Robot> climbBots = new ArrayList<Robot>();
+				climbBots.addAll(BlueAlliance.whoClimb());
+				climbBots.addAll(RedAlliance.whoClimb());
+				
+				for (time = 1; time <= 135; time++) {
+					for (int i = 0; i < scaleBots.size(); i++) {
+						if (time != 0 && time % scaleBots.get(i).getPlaceCubeTimeScale(scaleBots.get(i).getMyAlliance(),
+								scaleBots.get(i).getOpposingAlliance()) == 0) {
+							Field.getScale().putCube(scaleBots.get(i), time, RedScore,
+									BlueScore);
+
+						}
+					}
+					for (int i = 0; i < allianceSwitchBots.size(); i++) {
+						if (time != 0 && time % allianceSwitchBots.get(i).getPlaceCubeTimeSwitchAlliance(
+								allianceSwitchBots.get(i).getMyAlliance(),
+								allianceSwitchBots.get(i).getOpposingAlliance()) == 0) {
+							Field.getAllianceSwitch(allianceSwitchBots.get(i)).putCube(allianceSwitchBots.get(i),
+									time, RedScore, BlueScore);
+
+						}
+					}
+					for (int i = 0; i < opponentSwitchBots.size(); i++) {
+						if (time != 0 && time % opponentSwitchBots.get(i).getPlaceCubeTimeSwitchOpponent(
+								opponentSwitchBots.get(i).getMyAlliance(),
+								opponentSwitchBots.get(i).getOpposingAlliance()) == 0) {
+							Field.getOpponentSwitch(opponentSwitchBots.get(i)).putCube(opponentSwitchBots.get(i),
+									time, RedScore, BlueScore);
+
+						}
+					}
+					for (int i = 0; i < vaultBots.size(); i++) {
+						if (time != 0 && time % vaultBots.get(i).getPlaceCubeTimeScale(vaultBots.get(i).getMyAlliance(),
+								vaultBots.get(i).getOpposingAlliance()) == 0) {
+							Field.getMyVault(vaultBots.get(i)).putCube(vaultBots.get(i), RedScore,
+									BlueScore);
+
+						}
+					}
+					for (int i = 0; i < climbBots.size(); i++) {
+						if (time != 0 && time % climbBots.get(i).getClimbTime() == 0) {
+							if (climbBots.get(i).getMyAlliance().getAllianceColor() == "red") {
+								RedScore.updateScore(30);
+							} else {
+								BlueScore.updateScore(30);
+							}
+
+						}
+					}
+
 			}
+		  }
 
 		});
 
@@ -249,7 +332,7 @@ public class FrontEnd extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				RedRobot1.setMode("allianceSwitch");
-				
+
 			}
 
 		});
@@ -718,8 +801,8 @@ public class FrontEnd extends JFrame {
 		panel.setBackground(Color.white);
 		this.add(panel);
 		this.setVisible(true);
-
 	}
+	
 
 	public void setRedScore() {
 

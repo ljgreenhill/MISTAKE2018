@@ -23,7 +23,7 @@ public class Robot {
 		this.climb = false;
 		this.target = 0;
 		this.id = 0;
-		this.mode = "";
+		this.mode = "nothing";
 	}
 
 	public String getMode() {
