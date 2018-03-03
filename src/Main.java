@@ -53,8 +53,8 @@ public class Main {
 		myMatch.getRedAlliance().getRobot2().setClimbTime(10.0);
 		myMatch.getRedAlliance().getRobot3().setClimbTime(10.0);
 		
-		myMatch.getRedAlliance().getRobot1().setScaleTimeNeutral(10.0);
-		myMatch.getRedAlliance().getRobot2().setScaleTimeNeutral(10.0);
+		myMatch.getRedAlliance().getRobot1().setScaleTimeNeutral(120.0);
+		myMatch.getRedAlliance().getRobot2().setScaleTimeNeutral(120.0);
 		myMatch.getRedAlliance().getRobot3().setScaleTimeNeutral(10.0);
 		myMatch.getBlueAlliance().getRobot1().setScaleTimeNeutral(10.0);
 		myMatch.getBlueAlliance().getRobot1().setScaleTimeNeutral(10.0);
@@ -67,8 +67,9 @@ public class Main {
 		myMatch.getBlueAlliance().getRobot1().setVaultTimeNeutral(10.0);
 		myMatch.getBlueAlliance().getRobot1().setVaultTimeNeutral(1.0);
 		
-		
+		//myFrontEnd.refreshScores(myMatch.getRedScore(), myMatch.getBlueScore());
 		//System.out.print(myMatch.getRedScore().getScore());
+	
 		
 		//myMatch.getBlueScore().updateScore(333);
 		
@@ -138,7 +139,7 @@ public class Main {
 				}
 			}*/
 		}
-	//	myFrontEnd.refreshScores(myMatch.getRedScore(), myMatch.getBlueScore());
+		
 	//	System.out.print(myMatch.getRedScore().getScore());
 	//	System.out.print(myMatch.getBlueScore().getScore());
 	}// end of main

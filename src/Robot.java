@@ -30,8 +30,8 @@ public class Robot {
 		return mode;
 	}
 
-	public void setMode(String mode) {
-		this.mode = mode;
+	public void setMode(String myMode) {
+		this.mode = myMode;
 	}
 
 	public Alliance getMyAlliance() {

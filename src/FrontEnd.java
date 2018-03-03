@@ -235,7 +235,7 @@ public class FrontEnd extends JFrame {
 					}
 					for (int i = 0; i < climbBots.size(); i++) {
 						if (time != 0 && time % climbBots.get(i).findMatchTime() == 0) {
-							if (climbBots.get(i).getMyAlliance().getAllianceColor() == "red") {
+							if (climbBots.get(i).getRobotAlliance() == "red") {
 								RedScore.updateScore(30);
 							} else {
 								BlueScore.updateScore(30);
