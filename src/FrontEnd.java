@@ -226,6 +226,7 @@ public class FrontEnd extends JFrame {
 
 						}
 					}
+					//
 					for (int i = 0; i < vaultBots.size(); i++) {
 						if (time != 0 && time % vaultBots.get(i).getPlaceCubeTimeVault(vaultBots.get(i).getMyAlliance(),
 								vaultBots.get(i).getOpposingAlliance()) == 0) {
