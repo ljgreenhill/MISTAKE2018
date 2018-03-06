@@ -13,6 +13,7 @@ public class Robot {
 	double vaultTimeNeutral;
 	String mode;
 	private boolean climb;
+	private boolean scale;
 	double MATCH_TIME;
 	int target;
 	int id;
@@ -79,6 +80,14 @@ public class Robot {
 
 	public void setClimb(boolean climb) {
 		this.climb = climb;
+	}
+	//for testing
+	public boolean getBooleanScale() {
+		return scale;
+	}
+
+	public void setScale(boolean scale) {
+		this.scale = scale;
 	}
 
 	// get and set time to deliver to own switch when defended

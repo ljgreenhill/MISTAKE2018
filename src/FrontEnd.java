@@ -467,7 +467,9 @@ public class FrontEnd extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				RedRobot1.setMode("scale");
+				//RedRobot1.setMode("scale");
+				RedRobot1.setScale(true);
+				
 			}
 		});
 
@@ -478,7 +480,7 @@ public class FrontEnd extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				RedRobot2.setMode("scale");
+				RedRobot2.setScale(true);
 			}
 		});
 
@@ -489,7 +491,7 @@ public class FrontEnd extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				RedRobot3.setMode("scale");
+				RedRobot3.setScale(true);
 			}
 		});
 
@@ -500,7 +502,7 @@ public class FrontEnd extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				BlueRobot1.setMode("scale");
+				BlueRobot1.setScale(true);
 			}
 		});
 
@@ -511,7 +513,7 @@ public class FrontEnd extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				BlueRobot3.setMode("scale");
+				BlueRobot2.setScale(true);
 			}
 		});
 
@@ -522,7 +524,7 @@ public class FrontEnd extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				BlueRobot3.setMode("scale");
+				BlueRobot3.setScale(true);
 			}
 		});
 
@@ -728,6 +730,7 @@ public class FrontEnd extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				BlueRobot2.setClimb(true);
+				
 			}
 		});
 
@@ -803,6 +806,8 @@ public class FrontEnd extends JFrame {
 		panel.setBackground(Color.white);
 		this.add(panel);
 		this.setVisible(true);
+		
+	
 	}
 	
 
@@ -822,5 +827,7 @@ public class FrontEnd extends JFrame {
 		this.RedScore3 = RedScore;
 		this.BlueScore3 = BlueScore;
 	}
+	
+	
 
 }

@@ -32,7 +32,7 @@ public class Main {
 				new Alliance("blue", new Robot(), new Robot(), new Robot()), new Score("red"), new Score("blue"));
 		
 		FrontEnd myFrontEnd = new FrontEnd(myMatch.getField(), myMatch.getBlueAlliance(), myMatch.getRedAlliance(), myMatch.getBlueScore(), myMatch.getRedScore(), myMatch.getBlueAlliance().getRobot1(), myMatch.getBlueAlliance().getRobot2(),
-				myMatch.getBlueAlliance().getRobot2(), myMatch.getRedAlliance().getRobot1(), myMatch.getRedAlliance().getRobot2(), myMatch.getRedAlliance().getRobot3());
+				myMatch.getBlueAlliance().getRobot3(), myMatch.getRedAlliance().getRobot1(), myMatch.getRedAlliance().getRobot2(), myMatch.getRedAlliance().getRobot3());
 		
 		//Scale myScale = new Scale(myMatch.getBlueScore(), myMatch,getRedScore(), )
 		
@@ -66,6 +66,13 @@ public class Main {
 		myMatch.getBlueAlliance().getRobot1().setVaultTimeNeutral(10.0);
 		myMatch.getBlueAlliance().getRobot1().setVaultTimeNeutral(10.0);
 		myMatch.getBlueAlliance().getRobot1().setVaultTimeNeutral(1.0);
+		
+		myMatch.getRedAlliance().getRobot1().setSwitchAllianceTimeNeutral(10.0);
+		myMatch.getRedAlliance().getRobot2().setSwitchAllianceTimeNeutral(10.0);
+		myMatch.getRedAlliance().getRobot3().setSwitchAllianceTimeNeutral(10.0);
+		myMatch.getBlueAlliance().getRobot1().setSwitchAllianceTimeNeutral(10.0);
+		myMatch.getBlueAlliance().getRobot1().setSwitchAllianceTimeNeutral(10.0);
+		myMatch.getBlueAlliance().getRobot1().setSwitchAllianceTimeNeutral(1.0);
 		
 		//myFrontEnd.refreshScores(myMatch.getRedScore(), myMatch.getBlueScore());
 		//System.out.print(myMatch.getRedScore().getScore());

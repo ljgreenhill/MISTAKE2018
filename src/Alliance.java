@@ -49,7 +49,7 @@ public class Alliance {
 		ArrayList<Robot> scaleBots = new ArrayList<Robot>();
 
 		for (int i = 0; i < allianceRobots.size(); i++) {
-			if (allianceRobots.get(i).getMode().equals("scale")) {
+			if (allianceRobots.get(i).getBooleanScale() == true) {
 				scaleBots.add(allianceRobots.get(i));
 			}
 		}
@@ -72,7 +72,7 @@ public class Alliance {
 		ArrayList<Robot> opponentSwitchBots = new ArrayList<Robot>();
 
 		for (int i = 0; i < allianceRobots.size(); i++) {
-			if (allianceRobots.get(i).getMode().equals("allianceSwitch")) {
+			if (allianceRobots.get(i).getMode().equals("opponentSwitch")) {
 				opponentSwitchBots.add(allianceRobots.get(i));
 			}
 		}
@@ -83,7 +83,7 @@ public class Alliance {
 		ArrayList<Robot> vaultBots = new ArrayList<Robot>();
 
 		for (int i = 0; i < allianceRobots.size(); i++) {
-			if (allianceRobots.get(i).getMode().equals("allianceSwitch")) {
+			if (allianceRobots.get(i).getMode().equals("vault")) {
 				vaultBots.add(allianceRobots.get(i));
 			}
 		}
